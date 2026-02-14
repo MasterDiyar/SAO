@@ -1,0 +1,8 @@
+[gd_scene format=3 uid="uid://l3na3moaar4f"]
+
+[ext_resource type="Script" uid="uid://b2ruxdex1ptyq" path="res://scripts/bullets/Bullet.cs" id="1_fysjy"]
+
+[node name="Bullet" type="Area2D" unique_id=1728971169]
+script = ExtResource("1_fysjy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1799808597]

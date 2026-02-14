@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://wl8t56fe0k6c"]
+
+[ext_resource type="Texture2D" uid="uid://cxgfq7qqy5l30" path="res://assets/unitas/whure.png" id="1_u3qdw"]
+
+[sub_resource type="Curve" id="Curve_jq4vv"]
+_limits = [0.0, 3.0, 0.0, 0.99707174]
+_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.99707174, 0.9775281), 4.5071316, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_vbnjj"]
+offsets = PackedFloat32Array(0, 0.102564104, 0.28846154, 0.82051283, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.972549, 0.9490196, 0, 1, 1, 0.54509807, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
+
+[node name="fireHot" type="CPUParticles2D" unique_id=915686076]
+texture_filter = 3
+amount = 25
+texture = ExtResource("1_u3qdw")
+direction = Vector2(10, 0)
+spread = 20.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 30.0
+initial_velocity_max = 90.0
+radial_accel_min = 3.92
+radial_accel_max = 9.8
+angle_max = 180.0
+scale_amount_min = 0.5
+scale_amount_curve = SubResource("Curve_jq4vv")
+color_ramp = SubResource("Gradient_vbnjj")
+hue_variation_max = 1.0

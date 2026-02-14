@@ -1,0 +1,51 @@
+[gd_scene format=3 uid="uid://d070enfgtkdph"]
+
+[ext_resource type="Script" uid="uid://cojvmncom4tsf" path="res://scripts/upgrades/UpgradeCard.cs" id="1_2ahmq"]
+[ext_resource type="Texture2D" uid="uid://dgxs0dxyyapfq" path="res://assets/upgrades/one.png" id="2_nba81"]
+[ext_resource type="Script" uid="uid://61p6p54sfix" path="res://scripts/upgrades/UpgradeNum.cs" id="3_py43n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_verds"]
+font_color = Color(1, 0, 0, 1)
+
+[node name="UpgradeCard" type="Panel" unique_id=469955785]
+texture_filter = 3
+offset_right = 128.0
+offset_bottom = 196.0
+script = ExtResource("1_2ahmq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1426114269]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Name" type="Label" parent="VBoxContainer" unique_id=674010380]
+layout_mode = 2
+
+[node name="Texture" type="TextureRect" parent="VBoxContainer" unique_id=1413686888]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.08
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/Texture" unique_id=1405412821]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -40.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_nba81")
+script = ExtResource("3_py43n")
+
+[node name="Plus" type="Label" parent="VBoxContainer" unique_id=899645561]
+layout_mode = 2
+
+[node name="Minus" type="Label" parent="VBoxContainer" unique_id=1487538823]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_verds")

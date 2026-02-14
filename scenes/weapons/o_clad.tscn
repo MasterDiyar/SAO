@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://ciuw7t5wyqgbk"]
+
+[ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_6hyqi"]
+[ext_resource type="PackedScene" uid="uid://dnl7copx6tpsu" path="res://scenes/bullet/bullet.tscn" id="2_7rsrl"]
+
+[node name="OClad" unique_id=1166905945 instance=ExtResource("1_6hyqi")]
+bulletScene = ExtResource("2_7rsrl")
+BetweenAngle = 1.7
+Offset = 80.0
+Count = 3
+AttackSpeed = 3.0
+AutoAttack = true

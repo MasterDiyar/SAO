@@ -4,7 +4,7 @@ using SAO.scripts.upgrades;
 
 public partial class Unit : CharacterBody2D
 {
-	[Export] UnitResource Stats;
+	[Export] public UnitResource Stats;
 	public float CurrentHealth = 0, CurrentMana = 0, CurrentArmor = 0;
 	public override void _Ready()
 	{

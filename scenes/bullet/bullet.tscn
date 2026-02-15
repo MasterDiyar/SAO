@@ -7,8 +7,8 @@
 radius = 16.03122
 
 [node name="Bullet" unique_id=1728971169 instance=ExtResource("1_83itf")]
-Speed = 100.0
-AngularVelocity = 5.0
+Speed = 251.2
+AngularVelocity = 3.142
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
 shape = SubResource("CircleShape2D_0vdx3")

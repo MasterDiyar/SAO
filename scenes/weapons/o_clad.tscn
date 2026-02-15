@@ -2,11 +2,24 @@
 
 [ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_6hyqi"]
 [ext_resource type="PackedScene" uid="uid://dnl7copx6tpsu" path="res://scenes/bullet/bullet.tscn" id="2_7rsrl"]
+[ext_resource type="PackedScene" uid="uid://dg8mefwvmbqpk" path="res://scenes/weapons/on_player_spawner.tscn" id="2_iqg1b"]
+[ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="4_4iro5"]
+[ext_resource type="PackedScene" uid="uid://dbvo6smvwedp2" path="res://scenes/weapons/on_player_bullet_factory.tscn" id="4_wplgx"]
 
-[node name="OClad" unique_id=1166905945 instance=ExtResource("1_6hyqi")]
-bulletScene = ExtResource("2_7rsrl")
-BetweenAngle = 1.7
-Offset = 80.0
-Count = 3
-AttackSpeed = 3.0
+[node name="OClad" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_6hyqi")]
+Trigger = NodePath("Trigger")
+_factory = NodePath("OnPlayerBulletFactory")
+_spawner = NodePath("OnPlayerSpawner")
+randomA = true
+
+[node name="OnPlayerSpawner" parent="." index="0" unique_id=1259686957 instance=ExtResource("2_iqg1b")]
+
+[node name="Trigger" parent="." index="1" unique_id=1013342501 instance=ExtResource("4_4iro5")]
+AttackSpeed = 1.5
 AutoAttack = true
+
+[node name="OnPlayerBulletFactory" parent="." index="2" unique_id=740485104 instance=ExtResource("4_wplgx")]
+BulletScene = ExtResource("2_7rsrl")
+Count = 3
+BetweenAngle = 2.093
+Offset = 80.0

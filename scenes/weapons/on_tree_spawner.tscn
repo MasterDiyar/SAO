@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b4q1mbarsx700"]
+
+[ext_resource type="Script" uid="uid://bb0lp0cqqsluw" path="res://scripts/weapons/BulletSpawner.cs" id="1_fhlt8"]
+
+[node name="OnTreeSpawner" type="Node" unique_id=1118376102]
+script = ExtResource("1_fhlt8")

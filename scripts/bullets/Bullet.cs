@@ -15,13 +15,14 @@ public partial class Bullet : Area2D
 
     public void Horosh(Node2D h)
     {
+        if (h == GetParent()) return;
         if (h is Unit uit)
         {
             uit.TakeDamage(Damage);
         }
     }
 
-    public override void _Process(double delta)
+    public override void _Process(double delta) //for angulra speed = a = wR
     {
         float dl = (float) delta;
         Rotation += AngularVelocity * dl;

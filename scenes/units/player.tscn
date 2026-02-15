@@ -3,16 +3,28 @@
 [ext_resource type="Script" uid="uid://bet7w3f35f3lj" path="res://scripts/units/Player.cs" id="1_15tbu"]
 [ext_resource type="PackedScene" uid="uid://wl8t56fe0k6c" path="res://scenes/particles/fire_hot.tscn" id="1_esfxm"]
 [ext_resource type="Texture2D" uid="uid://dk1ikcj4qamcm" path="res://assets/unitas/Ufonat.png" id="1_pkbir"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_rwmet"]
 [ext_resource type="PackedScene" uid="uid://ciuw7t5wyqgbk" path="res://scenes/weapons/o_clad.tscn" id="4_55td2"]
+[ext_resource type="PackedScene" uid="uid://5vnk840ld3aw" path="res://scenes/weapons/sob_chach.tscn" id="6_xovxq"]
+
+[sub_resource type="Resource" id="Resource_xovxq"]
+script = ExtResource("2_rwmet")
+Hp = 250.0
+Mp = 3.4028234663852882e+38
+Speed = 80.0
+Armor = 256.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15tbu"]
 radius = 8.200684
 
 [node name="Player" type="CharacterBody2D" unique_id=511997155 node_paths=PackedStringArray("left", "right")]
 texture_filter = 3
+position = Vector2(557.59216, 304.2307)
 script = ExtResource("1_15tbu")
 left = NodePath("left")
 right = NodePath("right")
+Stats = SubResource("Resource_xovxq")
 
 [node name="right" parent="." unique_id=915686076 instance=ExtResource("1_esfxm")]
 position = Vector2(7, 13)
@@ -29,3 +41,5 @@ shape = SubResource("CapsuleShape2D_15tbu")
 texture = ExtResource("1_pkbir")
 
 [node name="OClad" parent="." unique_id=1166905945 instance=ExtResource("4_55td2")]
+
+[node name="SobChach" parent="." unique_id=876835232 instance=ExtResource("6_xovxq")]

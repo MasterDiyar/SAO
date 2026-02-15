@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://16dgwfwvjl5j"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_vackk"]
+[ext_resource type="Texture2D" uid="uid://b7vmo211oqnru" path="res://assets/unitas/hmpfu.png" id="2_lsdyd"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d7x30"]
+size = Vector2(12, 4)
+
+[node name="Bullet" unique_id=1728971169 instance=ExtResource("1_vackk")]
+Speed = 360.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("RectangleShape2D_d7x30")
+
+[node name="Hmpfu" type="Sprite2D" parent="." index="1" unique_id=933565604]
+texture = ExtResource("2_lsdyd")

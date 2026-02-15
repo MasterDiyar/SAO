@@ -1,0 +1,20 @@
+[gd_scene format=3 uid="uid://5vnk840ld3aw"]
+
+[ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_fr1qd"]
+[ext_resource type="PackedScene" uid="uid://b4q1mbarsx700" path="res://scenes/weapons/on_tree_spawner.tscn" id="2_rcr0e"]
+[ext_resource type="PackedScene" uid="uid://bhl7d6jyv7iss" path="res://scenes/weapons/bullet_factory.tscn" id="3_l71gl"]
+[ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="4_8ouch"]
+[ext_resource type="PackedScene" uid="uid://16dgwfwvjl5j" path="res://scenes/bullet/bloda.tscn" id="4_rcr0e"]
+
+[node name="SobChach" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_fr1qd")]
+Trigger = NodePath("Trigger")
+_factory = NodePath("BulletFactory")
+_spawner = NodePath("OnTreeSpawner")
+
+[node name="OnTreeSpawner" parent="." index="0" unique_id=1118376102 instance=ExtResource("2_rcr0e")]
+
+[node name="BulletFactory" parent="." index="1" unique_id=591390071 instance=ExtResource("3_l71gl")]
+BulletScene = ExtResource("4_rcr0e")
+Offset = 30.0
+
+[node name="Trigger" parent="." index="2" unique_id=1013342501 instance=ExtResource("4_8ouch")]

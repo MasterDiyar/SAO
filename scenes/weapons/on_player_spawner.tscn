@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dg8mefwvmbqpk"]
+
+[ext_resource type="Script" uid="uid://dul3q2ew2v8q6" path="res://scripts/weapons/OnPlayerSpawner.cs" id="1_k0ofi"]
+
+[node name="OnPlayerSpawner" type="Node" unique_id=1259686957]
+script = ExtResource("1_k0ofi")

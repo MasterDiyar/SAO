@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://dbvo6smvwedp2"]
+
+[ext_resource type="Script" uid="uid://bnyg11geomgnf" path="res://scripts/weapons/OnPlayerBulletFactory.cs" id="1_kbue1"]
+
+[node name="OnPlayerBulletFactory" type="Node2D" unique_id=740485104]
+script = ExtResource("1_kbue1")

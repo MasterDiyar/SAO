@@ -1,37 +1,25 @@
 using Godot;
 using System;
-using SAO.scripts.bullets;
+
+namespace SAO.scripts.weapons;
 
 public partial class Weapon : Node2D
 {
-	[Export] PackedScene bulletScene;
-	[Export] private float BetweenAngle = 0;
-	[Export] private float Scale = 1;
-	[Export] private float Offset = 0;
-	[Export] int Count = 1;
-	[Export] float AttackSpeed = 1;
-	[Export] private bool AutoAttack = false;
-
-	private float co = 0;
-	public override void _Process(double delta)
+	[Export] public  WeaponTrigger Trigger;
+	[Export] private BulletFactory _factory;
+	[Export] private BulletSpawner _spawner;
+	[Export] private bool randomA = false;
+	public override void _Ready()
 	{
-		co += (float)delta;
-		if (!AutoAttack) return;
-		if (!(co > AttackSpeed)) return;
-		co = 0;
-		Attack(GD.Randf() * Mathf.Tau);
+		Trigger.ShootRequested += OnShootRequested;
 	}
 
-	public void Attack(float angle)
+	private void OnShootRequested(float angle)
 	{
-		for (int i = 0; i < Count; i++)
-		{
-			Bullet bt = bulletScene.Instantiate<Bullet>();
-			bt.Rotation = angle + BetweenAngle* i;
-			bt.GlobalPosition = GlobalPosition + Vector2.FromAngle(angle) * Offset;
-			bt.GlobalScale *= Scale;
-			GetTree().Root.AddChild(bt);
-		}
-		
+		float randomAngle = randomA ? GD.Randf() * Mathf.Tau : angle;//(GlobalPosition-GetGlobalMousePosition()).Angle();
+
+		var bullets = _factory.CreateBullets(GlobalPosition, randomAngle);
+
+		_spawner.Spawn(bullets);
 	}
 }

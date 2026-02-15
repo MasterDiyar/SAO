@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bhl7d6jyv7iss"]
+
+[ext_resource type="Script" uid="uid://b04l8l3ur1atg" path="res://scripts/weapons/BulletFactory.cs" id="1_ir21c"]
+
+[node name="BulletFactory" type="Node2D" unique_id=591390071]
+script = ExtResource("1_ir21c")

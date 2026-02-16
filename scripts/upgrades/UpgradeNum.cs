@@ -10,4 +10,9 @@ public partial class UpgradeNum : TextureRect
 		num = GetParent().GetParent().GetParent<UpgradeCard>().level;
 		Texture = GD.Load<Texture2D>("res://assets/upgrades/"+nane[num]+".png");
 	}
+
+	public void Update(int num)
+	{
+		Texture = GD.Load<Texture2D>("res://assets/upgrades/"+nane[num]+".png");
+	}
 }

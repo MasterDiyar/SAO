@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bth5e6hjsxfv2"]
+
+[ext_resource type="PackedScene" uid="uid://d070enfgtkdph" path="res://scenes/prefab/upgrade_card.tscn" id="1_gfsmn"]
+[ext_resource type="Texture2D" uid="uid://bxkbsbxerwnnm" path="res://assets/upgrades/strength.png" id="2_n1ft4"]
+
+[node name="Strength" unique_id=469955785 instance=ExtResource("1_gfsmn")]
+
+[node name="Name" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="0" unique_id=674010380]
+text = "Strength"
+
+[node name="Texture" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="1" unique_id=1413686888]
+texture = ExtResource("2_n1ft4")
+
+[node name="Plus" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="2" unique_id=899645561]
+text = "Damage: 10%"

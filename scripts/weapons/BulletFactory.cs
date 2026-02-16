@@ -34,4 +34,4 @@ public partial class BulletFactory : Node2D
         
         return bullets;
     }
-}
+} 

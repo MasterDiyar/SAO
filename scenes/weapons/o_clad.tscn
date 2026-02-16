@@ -15,7 +15,7 @@ randomA = true
 [node name="OnPlayerSpawner" parent="." index="0" unique_id=1259686957 instance=ExtResource("2_iqg1b")]
 
 [node name="Trigger" parent="." index="1" unique_id=1013342501 instance=ExtResource("4_4iro5")]
-AttackSpeed = 1.5
+AttackSpeed = 10.0
 AutoAttack = true
 
 [node name="OnPlayerBulletFactory" parent="." index="2" unique_id=740485104 instance=ExtResource("4_wplgx")]

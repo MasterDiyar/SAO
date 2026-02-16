@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_15tbu"]
 radius = 8.200684
 
-[node name="Player" type="CharacterBody2D" unique_id=511997155 node_paths=PackedStringArray("left", "right")]
+[node name="Player" type="CharacterBody2D" unique_id=511997155 node_paths=PackedStringArray("left", "right") groups=["player"]]
 texture_filter = 3
 position = Vector2(557.59216, 304.2307)
 script = ExtResource("1_15tbu")
@@ -41,5 +41,6 @@ shape = SubResource("CapsuleShape2D_15tbu")
 texture = ExtResource("1_pkbir")
 
 [node name="OClad" parent="." unique_id=1166905945 instance=ExtResource("4_55td2")]
+randomA = false
 
 [node name="SobChach" parent="." unique_id=876835232 instance=ExtResource("6_xovxq")]

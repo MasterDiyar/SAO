@@ -7,6 +7,7 @@ public partial class Bullet : Area2D
     [Export] public float Damage = 1;
     [Export] public float Speed = 1;
     [Export] public float AngularVelocity = 0;
+    [Export] public float LifeTime = 10;
 
     public override void _Ready()
     {
@@ -25,6 +26,8 @@ public partial class Bullet : Area2D
     public override void _Process(double delta) //for angulra speed = a = wR
     {
         float dl = (float) delta;
+        LifeTime -= dl;
+        if (LifeTime <= 0) QueueFree();
         Rotation += AngularVelocity * dl;
         Position += Speed * dl * Vector2.FromAngle(Rotation);
     }

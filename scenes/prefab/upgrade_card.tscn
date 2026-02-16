@@ -23,6 +23,7 @@ grow_vertical = 2
 
 [node name="Name" type="Label" parent="VBoxContainer" unique_id=674010380]
 layout_mode = 2
+horizontal_alignment = 1
 
 [node name="Texture" type="TextureRect" parent="VBoxContainer" unique_id=1413686888]
 layout_mode = 2
@@ -45,7 +46,9 @@ script = ExtResource("3_py43n")
 
 [node name="Plus" type="Label" parent="VBoxContainer" unique_id=899645561]
 layout_mode = 2
+horizontal_alignment = 1
 
 [node name="Minus" type="Label" parent="VBoxContainer" unique_id=1487538823]
 layout_mode = 2
 label_settings = SubResource("LabelSettings_verds")
+horizontal_alignment = 1

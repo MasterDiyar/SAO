@@ -8,34 +8,28 @@ public partial class Player : Unit
 	[Export] float Amplitude = 10;
 	[Export] CpuParticles2D left, right;
 
-	public override void _Ready()
-	{
-	}
-
 	private float time = 0;
 
-	public override void _Process(double delta)
+	public override void _PhysicsProcess(double delta)
 	{
 		float dt = (float)delta;
 		time += dt;
-		Position += Vector2.Up * Mathf.Sin(time) * dt * Amplitude;
+		Position += Vector2.Up * Mathf.Sin(time*4) * dt * Amplitude;
 		Movepos(dt);
 		taka();
+		MoveAndSlide();
 	}
 
 	void Movepos(float dt)
 	{
 		Vector2 azov = Input.GetVector("a", "d", "w", "s");
 		azov = azov.Normalized();
-		Position += azov * dt * Stats.Speed;
-		if (azov.X != 0)
-		{
+		Velocity += azov * dt * Stats.Speed;
+		if (azov.X != 0) {
 			var hi = azov.X > 0;
 			right.Emitting = !hi;
 			left.Emitting = hi;
-		}
-		else
-		{
+		} else {
 			right.Emitting = true;
 			left.Emitting = true;
 		}

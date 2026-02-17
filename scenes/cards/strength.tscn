@@ -2,8 +2,41 @@
 
 [ext_resource type="PackedScene" uid="uid://d070enfgtkdph" path="res://scenes/prefab/upgrade_card.tscn" id="1_gfsmn"]
 [ext_resource type="Texture2D" uid="uid://bxkbsbxerwnnm" path="res://assets/upgrades/strength.png" id="2_n1ft4"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_o2idm"]
+
+[sub_resource type="Resource" id="Resource_kvwxy"]
+script = ExtResource("2_o2idm")
+StrengthMultiplier = 1.1
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_yaehs"]
+script = ExtResource("2_o2idm")
+StrengthMultiplier = 1.05
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_o05gu"]
+script = ExtResource("2_o2idm")
+StrengthMultiplier = 1.05
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_vda2d"]
+script = ExtResource("2_o2idm")
+StrengthMultiplier = 1.15
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_02016"]
+script = ExtResource("2_o2idm")
+StrengthMultiplier = 1.2
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_yjkrc"]
+script = ExtResource("2_o2idm")
+StrengthMultiplier = 1.25
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [node name="Strength" unique_id=469955785 instance=ExtResource("1_gfsmn")]
+UpgradeTexts = PackedStringArray("Damage: 10%", "Damage: 5%", "Damage: 5%", "Damage: 15%", "Damage: 5%", "Damage: 5%", "Damage: 20%", "Damage: 10%", "Damage: 10%", "Damage: 25%")
+UpgradeResources = [SubResource("Resource_kvwxy"), SubResource("Resource_yaehs"), SubResource("Resource_o05gu"), SubResource("Resource_vda2d"), SubResource("Resource_o05gu"), SubResource("Resource_o05gu"), SubResource("Resource_02016"), SubResource("Resource_kvwxy"), SubResource("Resource_kvwxy"), SubResource("Resource_yjkrc")]
 
 [node name="Name" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="0" unique_id=674010380]
 text = "Strength"

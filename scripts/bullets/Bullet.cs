@@ -8,6 +8,7 @@ public partial class Bullet : Area2D
     [Export] public float Speed = 1;
     [Export] public float AngularVelocity = 0;
     [Export] public float LifeTime = 10;
+    public Node Owner;
 
     public override void _Ready()
     {
@@ -17,7 +18,7 @@ public partial class Bullet : Area2D
     public void Horosh(Node2D h)
     {
         if (h is not Unit uit) return;
-        if (uit.Equals((Unit)GetParent()))return;
+        if (uit == Owner)return;
         uit.TakeDamage(Damage);
     }
 

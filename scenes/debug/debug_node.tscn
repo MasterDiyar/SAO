@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c5wjiorthgmaa"]
+
+[ext_resource type="Script" uid="uid://khrl47par43q" path="res://scripts/resources/DebugNode.cs" id="1_n1ffl"]
+
+[node name="DebugNode" type="Node2D" unique_id=1118553164 node_paths=PackedStringArray("btns")]
+script = ExtResource("1_n1ffl")
+btns = NodePath("OptionButton")
+
+[node name="OptionButton" type="OptionButton" parent="." unique_id=926237524]
+offset_right = 32.0
+offset_bottom = 20.0
+item_count = 2
+popup/item_0/text = "AddXp"
+popup/item_0/id = 0
+popup/item_1/text = "AddRandMob"
+popup/item_1/id = 1

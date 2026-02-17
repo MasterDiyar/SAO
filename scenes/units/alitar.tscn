@@ -10,8 +10,15 @@ Hp = 100.0
 Mp = 0.0
 metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a0n71"]
+size = Vector2(30, 57)
+
 [node name="Alitar" unique_id=919433776 instance=ExtResource("1_fv6ja")]
 Stats = SubResource("Resource_lrxlt")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
+position = Vector2(-5, -28.5)
+shape = SubResource("RectangleShape2D_a0n71")
 
 [node name="Bash" type="Sprite2D" parent="." index="1" unique_id=1131285859]
 position = Vector2(-17, -16)

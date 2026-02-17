@@ -6,7 +6,8 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_0vdx3"]
 radius = 16.03122
 
-[node name="Bullet" unique_id=1728971169 instance=ExtResource("1_83itf")]
+[node name="strengthOrb" unique_id=1728971169 instance=ExtResource("1_83itf")]
+Damage = 10.0
 Speed = 251.2
 AngularVelocity = 3.142
 

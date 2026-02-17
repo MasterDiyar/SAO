@@ -1,15 +1,17 @@
 using System.Collections.Generic;
+using Godot;
 using SAO.scripts.bullets;
 
 namespace SAO.scripts.weapons;
 
 public partial class OnPlayerSpawner : BulletSpawner
 {
-    public override void Spawn(List<Bullet> bullets)
+    public override void Spawn(List<Bullet> bullets, Node owner)
     {
-        foreach (var VARIABLE in bullets)
+        foreach (var bt in bullets)
         {
-            GetParent().GetParent().AddChild(VARIABLE);
+            bt.Owner = owner;
+            GetParent().GetParent().AddChild(bt);
         }
     }
 }

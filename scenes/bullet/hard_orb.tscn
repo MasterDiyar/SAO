@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://byujqdsoy8ryq"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_s8ydb"]
+[ext_resource type="Texture2D" uid="uid://coiipsadto6j1" path="res://assets/unitas/hardcell.png" id="2_ugjwk"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s8ydb"]
+radius = 18.110771
+
+[node name="HardOrb" unique_id=1728971169 instance=ExtResource("1_s8ydb")]
+Damage = 25.0
+Speed = 334.88
+AngularVelocity = 2.093
+LifeTime = 25.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("CircleShape2D_s8ydb")
+
+[node name="Hardcell" type="Sprite2D" parent="." index="1" unique_id=1155913996]
+texture = ExtResource("2_ugjwk")

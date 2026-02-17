@@ -20,6 +20,6 @@ public partial class Weapon : Node2D
 
 		var bullets = _factory.CreateBullets(GlobalPosition, randomAngle);
 
-		_spawner.Spawn(bullets);
+		_spawner.Spawn(bullets,  GetParent());
 	}
 }

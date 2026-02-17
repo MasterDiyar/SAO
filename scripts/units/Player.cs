@@ -13,8 +13,12 @@ public partial class Player : Unit
 	public float XpToNextLevel = 50;
 	public float XpAddModifier = 1.0f;
 
+	public override void _Ready()
+	{
+		XpAddModifier = Stats.XpGainMultiplier;
+	}
 
-	
+
 	public override void _PhysicsProcess(double delta)
 	{
 		float dt = (float)delta;
@@ -24,6 +28,29 @@ public partial class Player : Unit
 		taka();
 		MoveAndSlide();
 	}
+
+	#region Upgrades
+
+	public void AddXp(float xp)
+	{
+		Xp += Mathf.Clamp(xp * XpAddModifier, 0.1f, xp * XpAddModifier);
+		GD.Print("Xp: " + Xp);
+		if (!(Xp >= XpToNextLevel)) return;
+		while (Xp >= XpToNextLevel)
+		{
+			Xp -= XpToNextLevel;
+			GiveUpgradeCards();
+			XpToNextLevel *= 1.6f;
+		}
+	}
+
+	void GiveUpgradeCards()
+	{
+		
+	}
+	
+
+	#endregion
 	
 	#region Movement
 	void Movepos(float dt)

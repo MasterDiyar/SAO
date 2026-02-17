@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ddlee5thu5oo6"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_nmotj"]
+[ext_resource type="Texture2D" uid="uid://d2jj2jogpinox" path="res://assets/unitas/strongcell.png" id="2_ecikx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_amn3e"]
+radius = 18.027756
+
+[node name="Bullet" unique_id=1728971169 instance=ExtResource("1_nmotj")]
+Damage = 40.0
+Speed = 301.44
+AngularVelocity = 1.256
+LifeTime = 16.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("CircleShape2D_amn3e")
+
+[node name="Strongcell" type="Sprite2D" parent="." index="1" unique_id=300448509]
+texture = ExtResource("2_ecikx")

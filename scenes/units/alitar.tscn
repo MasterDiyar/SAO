@@ -1,9 +1,17 @@
 [gd_scene format=3 uid="uid://dtjykejg6tfiw"]
 
 [ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_fv6ja"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_6hrwv"]
 [ext_resource type="Texture2D" uid="uid://ydp2itej2sd1" path="res://assets/unitas/bash.png" id="2_a0n71"]
 
+[sub_resource type="Resource" id="Resource_lrxlt"]
+script = ExtResource("2_6hrwv")
+Hp = 100.0
+Mp = 0.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
 [node name="Alitar" unique_id=919433776 instance=ExtResource("1_fv6ja")]
+Stats = SubResource("Resource_lrxlt")
 
 [node name="Bash" type="Sprite2D" parent="." index="1" unique_id=1131285859]
 position = Vector2(-17, -16)

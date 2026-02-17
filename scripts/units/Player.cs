@@ -9,7 +9,12 @@ public partial class Player : Unit
 	[Export] CpuParticles2D left, right;
 
 	private float time = 0;
+	public float Xp = 0;
+	public float XpToNextLevel = 50;
+	public float XpAddModifier = 1.0f;
 
+
+	
 	public override void _PhysicsProcess(double delta)
 	{
 		float dt = (float)delta;
@@ -19,7 +24,8 @@ public partial class Player : Unit
 		taka();
 		MoveAndSlide();
 	}
-
+	
+	#region Movement
 	void Movepos(float dt)
 	{
 		Vector2 azov = Input.GetVector("a", "d", "w", "s");
@@ -43,5 +49,5 @@ public partial class Player : Unit
 				w.Trigger.RequestAttack((GetGlobalMousePosition()-GlobalPosition).Angle());
 		}
 	}
-
+	#endregion
 }

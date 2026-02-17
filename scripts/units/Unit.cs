@@ -28,6 +28,8 @@ public partial class Unit : CharacterBody2D
 		else
 			CurrentHealth -= damage;
 		
+		GD.Print($"hp: {CurrentHealth}, armor: {CurrentArmor}");
+		
 		if (CurrentHealth <= 0)
 			DefferedDie();
 	}

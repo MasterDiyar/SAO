@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bm6axyrtuav5s"]
+
+[ext_resource type="Script" uid="uid://cjdq621uphmhf" path="res://scripts/UI/PlayerUI.cs" id="1_lvuxt"]
+[ext_resource type="PackedScene" uid="uid://b4auofnd1mc07" path="res://scenes/cards/card_picker.tscn" id="2_iv2e0"]
+
+[node name="Monitor" type="CanvasLayer" unique_id=1822647779]
+script = ExtResource("1_lvuxt")
+
+[node name="CardPicker" parent="." unique_id=1931976821 instance=ExtResource("2_iv2e0")]
+offset_left = 326.0
+offset_top = 167.0
+offset_right = 830.0
+offset_bottom = 490.0
+
+[node name="Control" type="Control" parent="." unique_id=1813894212]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Hp" type="Label" parent="Control" unique_id=254936543]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Hp: 100
+Armor: 100"

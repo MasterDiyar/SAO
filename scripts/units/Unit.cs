@@ -6,6 +6,8 @@ public partial class Unit : CharacterBody2D
 {
 	[Export] public UnitResource Stats;
 	public float CurrentHealth = 0, CurrentMana = 0, CurrentArmor = 0;
+	public Action<float,float> OnHealthChange = delegate { };
+	public Action<float,float> OnArmorChange = delegate { };
 	public override void _Ready()
 	{
 		CurrentHealth = Stats.Hp;
@@ -23,10 +25,13 @@ public partial class Unit : CharacterBody2D
 
 	public void TakeDamage(float damage)
 	{
-		if (CurrentArmor > 0)
+		if (CurrentArmor > 0) {
 			CurrentArmor -= damage;
-		else
+			OnArmorChange?.Invoke(CurrentArmor, CurrentArmor + damage);
+		}else {
 			CurrentHealth -= damage;
+			OnHealthChange?.Invoke(CurrentHealth, CurrentHealth + damage);
+		}
 		
 		GD.Print($"hp: {CurrentHealth}, armor: {CurrentArmor}");
 		
@@ -38,6 +43,4 @@ public partial class Unit : CharacterBody2D
 	{
 		CallDeferred("queue_free");
 	}
-	
-	
 }

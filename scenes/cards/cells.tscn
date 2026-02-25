@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://4ncm23jh3whl"]
+
+[ext_resource type="PackedScene" uid="uid://d070enfgtkdph" path="res://scenes/prefab/upgrade_card.tscn" id="1_lpise"]
+[ext_resource type="Script" uid="uid://bpk7fy84oo52k" path="res://scripts/upgrades/CellsUpgrade.cs" id="2_50rql"]
+[ext_resource type="Texture2D" uid="uid://wy0in0hlr3qu" path="res://assets/unitas/cell.png" id="2_sa162"]
+[ext_resource type="Texture2D" uid="uid://coiipsadto6j1" path="res://assets/unitas/hardcell.png" id="3_50rql"]
+[ext_resource type="Texture2D" uid="uid://d2jj2jogpinox" path="res://assets/unitas/strongcell.png" id="4_ql2uc"]
+
+[node name="Cells" unique_id=469955785 instance=ExtResource("1_lpise")]
+script = ExtResource("2_50rql")
+UpgradeTexts = PackedStringArray("Adds 3 rounding cell", "Adds 5 rounding cell", "Adds 7 rounding cell")
+UpgradeTextures = Array[Texture2D]([ExtResource("2_sa162"), ExtResource("3_50rql"), ExtResource("4_ql2uc")])
+isItNeeded = true
+
+[node name="Name" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="0" unique_id=674010380]
+text = "Cell"
+
+[node name="Texture" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="1" unique_id=1413686888]
+texture = ExtResource("2_sa162")
+
+[node name="Plus" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="2" unique_id=899645561]
+text = "Rounding cell"

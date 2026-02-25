@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://ckkxbjyfigte0"]
+
+[ext_resource type="PackedScene" uid="uid://d070enfgtkdph" path="res://scenes/prefab/upgrade_card.tscn" id="1_ua3yj"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_6wc2s"]
+[ext_resource type="Texture2D" uid="uid://bdt1sjlm4h2um" path="res://assets/upgrades/health.png" id="2_cdcmy"]
+
+[sub_resource type="Resource" id="Resource_i8c21"]
+script = ExtResource("2_6wc2s")
+Hp = 15.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_3deqh"]
+script = ExtResource("2_6wc2s")
+Hp = 20.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_1d8w3"]
+script = ExtResource("2_6wc2s")
+Hp = 25.0
+HpMultiplier = 1.1
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_5q17k"]
+script = ExtResource("2_6wc2s")
+Hp = 30.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_uaced"]
+script = ExtResource("2_6wc2s")
+HpMultiplier = 1.2
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[node name="UpgradeCard" unique_id=469955785 instance=ExtResource("1_ua3yj")]
+UpgradeTexts = PackedStringArray("+15 hp", "+20 hp", "+25 hp +10%hp", "+30 hp", "+20% hp")
+UpgradeResources = [SubResource("Resource_i8c21"), SubResource("Resource_3deqh"), SubResource("Resource_1d8w3"), SubResource("Resource_5q17k"), SubResource("Resource_uaced")]
+
+[node name="Name" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="0" unique_id=674010380]
+text = "ExtraHealth"
+
+[node name="Texture" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="1" unique_id=1413686888]
+texture = ExtResource("2_cdcmy")
+
+[node name="Plus" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="2" unique_id=899645561]
+text = "Adds health"

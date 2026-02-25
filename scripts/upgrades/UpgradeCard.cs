@@ -6,27 +6,32 @@ public partial class UpgradeCard : Panel
 	[Export] public int level= 1;
 	[Export] public string[] UpgradeTexts = [];
 	[Export] public UnitResource[] UpgradeResources = [];
+	[ExportGroup("ImagePerLevel")]
+	[Export] Texture2D[] UpgradeTextures;
+	[Export] bool isItNeeded = false;
 	private Label Plus, Minus;
 	private UpgradeNum Numero;
+
+	public Action isPicked;
 	public override void _Ready()
 	{
 		Plus  = GetNode<Label>("VBoxContainer/Plus");
 		Minus = GetNode<Label>("VBoxContainer/Minus");
 		Numero = GetNode<UpgradeNum>("VBoxContainer/Texture/TextureRect");
+		if (!isItNeeded) return;
+		Numero.GetParent<TextureRect>().Texture = UpgradeTextures[level-1];
 	}
 	
 	public override void _GuiInput(InputEvent @event)
 	{
-		if (@event is InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true })
-			ApplyUpgradeToPlayer();
-		
+		if (@event is not InputEventMouseButton { ButtonIndex: MouseButton.Left, Pressed: true }) return;
+		ApplyUpgradeToPlayer();
+		isPicked?.Invoke();
 	}
 
-	private void ApplyUpgradeToPlayer()
+	protected virtual void ApplyUpgradeToPlayer()
 	{
-		var player = GetTree().GetFirstNodeInGroup("Player") as Unit;
-
-		if (player != null) {
+		if (GetTree().GetFirstNodeInGroup("Player") is Unit player) {
 			int index = level - 1;
 			if (index >= 0 && index < UpgradeResources.Length) {
 				UnitResource upgrade = UpgradeResources[index];

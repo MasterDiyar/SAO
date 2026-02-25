@@ -1,15 +1,24 @@
 [gd_scene format=3 uid="uid://umoqbssar3xe"]
 
+[ext_resource type="Script" uid="uid://dp5oew4fl1trc" path="res://scripts/map/Map.cs" id="1_1gdup"]
 [ext_resource type="PackedScene" uid="uid://b8kfwqi1lltis" path="res://scenes/units/player.tscn" id="1_ry644"]
 [ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="2_ce1uw"]
 [ext_resource type="PackedScene" uid="uid://c5wjiorthgmaa" path="res://scenes/debug/debug_node.tscn" id="3_ce1uw"]
+[ext_resource type="PackedScene" uid="uid://b8dybuts3lcpm" path="res://scenes/mapEditorGenerics/grass.tscn" id="5_idmyr"]
 
 [node name="map" type="Node2D" unique_id=2134827611]
+script = ExtResource("1_1gdup")
 
 [node name="Player" parent="." unique_id=511997155 instance=ExtResource("1_ry644")]
 position = Vector2(299, 147)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=848817065]
 
 [node name="Alitar" parent="." unique_id=919433776 instance=ExtResource("2_ce1uw")]
 position = Vector2(871, 277)
 
 [node name="DebugNode" parent="." unique_id=1118553164 instance=ExtResource("3_ce1uw")]
+
+[node name="Grass" parent="." unique_id=2010142176 instance=ExtResource("5_idmyr")]
+position = Vector2(-106, 750)
+scale = Vector2(4, -4)

@@ -6,6 +6,7 @@ using SAO.scripts.weapons;
 public partial class Player : Unit
 {
 	[Export] float Amplitude = 10;
+	[Export] public float Friction = 2.0f;
 	[Export] CpuParticles2D left, right;
 
 	private float time = 0;
@@ -16,6 +17,11 @@ public partial class Player : Unit
 	public override void _Ready()
 	{
 		XpAddModifier = Stats.XpGainMultiplier;
+		left.ScaleAmountMin = Scale.X / 2;
+		right.ScaleAmountMin = Scale.X / 2;
+		left.ScaleAmountMax = Scale.X;
+		right.ScaleAmountMax = Scale.X;
+		
 	}
 
 
@@ -55,11 +61,13 @@ public partial class Player : Unit
 	#region Movement
 	void Movepos(float dt)
 	{
-		Vector2 azov = Input.GetVector("a", "d", "w", "s");
-		azov = azov.Normalized();
-		Velocity += azov * dt * Stats.Speed;
-		if (azov.X != 0) {
-			var hi = azov.X > 0;
+		Vector2 inputDir = Input.GetVector("a", "d", "w", "s").Normalized();
+    
+		Vector2 targetVelocity = inputDir * Stats.Speed;
+    
+		Velocity = inputDir != Vector2.Zero ? Velocity.Lerp(targetVelocity, dt * (Stats.Speed / 100.0f)) : Velocity.Lerp(Vector2.Zero, dt * Friction);
+		if (inputDir.X != 0) {
+			var hi = inputDir.X > 0;
 			right.Emitting = !hi;
 			left.Emitting = hi;
 		} else {

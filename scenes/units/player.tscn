@@ -4,7 +4,6 @@
 [ext_resource type="PackedScene" uid="uid://wl8t56fe0k6c" path="res://scenes/particles/fire_hot.tscn" id="1_esfxm"]
 [ext_resource type="Texture2D" uid="uid://dk1ikcj4qamcm" path="res://assets/unitas/Ufonat.png" id="1_pkbir"]
 [ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_rwmet"]
-[ext_resource type="PackedScene" uid="uid://ciuw7t5wyqgbk" path="res://scenes/weapons/o_clad.tscn" id="4_55td2"]
 [ext_resource type="PackedScene" uid="uid://5vnk840ld3aw" path="res://scenes/weapons/sob_chach.tscn" id="6_xovxq"]
 [ext_resource type="PackedScene" uid="uid://bm6axyrtuav5s" path="res://scenes/player/monitor.tscn" id="7_174p4"]
 
@@ -39,8 +38,6 @@ shape = SubResource("CapsuleShape2D_15tbu")
 
 [node name="Ufonat" type="Sprite2D" parent="." unique_id=2113300278]
 texture = ExtResource("1_pkbir")
-
-[node name="OClad" parent="." unique_id=1166905945 instance=ExtResource("4_55td2")]
 
 [node name="SobChach" parent="." unique_id=876835232 instance=ExtResource("6_xovxq")]
 

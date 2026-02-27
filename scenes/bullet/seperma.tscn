@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://cs7t3ne1f1uaj"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_fhont"]
+[ext_resource type="Texture2D" uid="uid://0aavlyhsyjf7" path="res://assets/unitas/seperma.png" id="2_fjnnm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dm5mi"]
+radius = 3.0
+
+[node name="Seperma" unique_id=1728971169 instance=ExtResource("1_fhont")]
+Damage = 16.0
+Speed = 80.0
+LifeTime = 3.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("CircleShape2D_dm5mi")
+
+[node name="Hardcell" type="Sprite2D" parent="." index="1" unique_id=716897052]
+texture = ExtResource("2_fjnnm")

@@ -1,23 +1,42 @@
 [gd_scene format=3 uid="uid://b4auofnd1mc07"]
 
 [ext_resource type="Script" uid="uid://cq2vum7socqhg" path="res://scripts/UI/CardPicker.cs" id="1_o10ky"]
+[ext_resource type="PackedScene" uid="uid://4ncm23jh3whl" path="res://scenes/cards/cells.tscn" id="2_kof48"]
+[ext_resource type="Script" uid="uid://byolx5tig536v" path="res://scripts/resources/PickerResource.cs" id="3_7dw1e"]
+[ext_resource type="PackedScene" uid="uid://ckkxbjyfigte0" path="res://scenes/cards/health.tscn" id="4_427an"]
+[ext_resource type="PackedScene" uid="uid://bth5e6hjsxfv2" path="res://scenes/cards/strength.tscn" id="5_h6ps4"]
+
+[sub_resource type="Resource" id="Resource_gtih7"]
+script = ExtResource("3_7dw1e")
+pickCard = ExtResource("2_kof48")
+Level = 1
+MaxLevel = 3
+metadata/_custom_type_script = "uid://byolx5tig536v"
+
+[sub_resource type="Resource" id="Resource_c3qdk"]
+script = ExtResource("3_7dw1e")
+pickCard = ExtResource("4_427an")
+Level = 1
+MaxLevel = 5
+Repeatable = true
+metadata/_custom_type_script = "uid://byolx5tig536v"
+
+[sub_resource type="Resource" id="Resource_14p3e"]
+script = ExtResource("3_7dw1e")
+pickCard = ExtResource("5_h6ps4")
+Level = 1
+MaxLevel = 10
+Repeatable = true
+metadata/_custom_type_script = "uid://byolx5tig536v"
 
 [node name="CardPicker" type="Control" unique_id=1931976821 node_paths=PackedStringArray("ExitButton")]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 504.0
+offset_right = 550.0
 offset_bottom = 323.0
 script = ExtResource("1_o10ky")
 ExitButton = NodePath("Button")
-allCards = Array[Object]([null])
-
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1176502478]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+allCards = Array[Object]([SubResource("Resource_gtih7"), SubResource("Resource_c3qdk"), SubResource("Resource_14p3e")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1642949075]
 layout_mode = 1
@@ -26,6 +45,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1459948111]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 2
+theme_override_constants/margin_top = 2
+theme_override_constants/margin_right = 2
+theme_override_constants/margin_bottom = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer" unique_id=1176502478]
+layout_mode = 2
+theme_override_constants/separation = 6
 
 [node name="Button" type="Button" parent="." unique_id=1879103100]
 layout_mode = 1

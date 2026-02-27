@@ -9,6 +9,8 @@ public partial class Player : Unit
 	[Export] public float Friction = 2.0f;
 	[Export] CpuParticles2D left, right;
 
+	private CardPicker _cardPicker;
+	
 	private float time = 0;
 	public float Xp = 0;
 	public float XpToNextLevel = 50;
@@ -16,6 +18,8 @@ public partial class Player : Unit
 
 	public override void _Ready()
 	{
+		_cardPicker = GetNode<CardPicker>("Monitor/CardPicker");
+		
 		XpAddModifier = Stats.XpGainMultiplier;
 		left.ScaleAmountMin = Scale.X / 2;
 		right.ScaleAmountMin = Scale.X / 2;
@@ -52,7 +56,7 @@ public partial class Player : Unit
 
 	void GiveUpgradeCards()
 	{
-		
+		_cardPicker.Toggle();
 	}
 	
 

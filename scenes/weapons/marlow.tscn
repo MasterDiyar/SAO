@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://ksutbctkm32d"]
+
+[ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_a1pil"]
+[ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="2_j2bt8"]
+[ext_resource type="PackedScene" uid="uid://dbvo6smvwedp2" path="res://scenes/weapons/on_player_bullet_factory.tscn" id="3_qtrpl"]
+[ext_resource type="PackedScene" uid="uid://ddlee5thu5oo6" path="res://scenes/bullet/strong_orb.tscn" id="4_srody"]
+[ext_resource type="PackedScene" uid="uid://dg8mefwvmbqpk" path="res://scenes/weapons/on_player_spawner.tscn" id="5_pk54s"]
+
+[node name="Marlow" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_a1pil")]
+Trigger = NodePath("Trigger")
+_factory = NodePath("OnPlayerBulletFactory")
+_spawner = NodePath("OnPlayerSpawner")
+randomA = true
+
+[node name="Trigger" parent="." index="0" unique_id=1013342501 instance=ExtResource("2_j2bt8")]
+AttackSpeed = 16.0
+AutoAttack = true
+
+[node name="OnPlayerBulletFactory" parent="." index="1" unique_id=740485104 instance=ExtResource("3_qtrpl")]
+BulletScene = ExtResource("4_srody")
+Count = 7
+BetweenAngle = 0.897
+Offset = 96.0
+
+[node name="OnPlayerSpawner" parent="." index="2" unique_id=1259686957 instance=ExtResource("5_pk54s")]

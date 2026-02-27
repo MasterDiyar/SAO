@@ -7,11 +7,16 @@
 [sub_resource type="LabelSettings" id="LabelSettings_verds"]
 font_color = Color(1, 0, 0, 1)
 
-[node name="UpgradeCard" type="Panel" unique_id=469955785]
+[node name="UpgradeCard" type="Panel" unique_id=469955785 node_paths=PackedStringArray("Plus", "Minus", "Numero")]
 texture_filter = 3
 offset_right = 128.0
 offset_bottom = 196.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
 script = ExtResource("1_2ahmq")
+Plus = NodePath("VBoxContainer/Plus")
+Minus = NodePath("VBoxContainer/Minus")
+Numero = NodePath("VBoxContainer/Texture/TextureRect")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1426114269]
 layout_mode = 1
@@ -28,7 +33,6 @@ horizontal_alignment = 1
 [node name="Texture" type="TextureRect" parent="VBoxContainer" unique_id=1413686888]
 layout_mode = 2
 size_flags_vertical = 3
-size_flags_stretch_ratio = 2.08
 
 [node name="TextureRect" type="TextureRect" parent="VBoxContainer/Texture" unique_id=1405412821]
 layout_mode = 1

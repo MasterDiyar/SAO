@@ -9,15 +9,12 @@ public partial class UpgradeCard : Panel
 	[ExportGroup("ImagePerLevel")]
 	[Export] Texture2D[] UpgradeTextures;
 	[Export] bool isItNeeded = false;
-	private Label Plus, Minus;
-	private UpgradeNum Numero;
+	[Export] private Label Plus, Minus;
+	[Export] private UpgradeNum Numero;
 
 	public Action isPicked;
 	public override void _Ready()
 	{
-		Plus  = GetNode<Label>("VBoxContainer/Plus");
-		Minus = GetNode<Label>("VBoxContainer/Minus");
-		Numero = GetNode<UpgradeNum>("VBoxContainer/Texture/TextureRect");
 		if (!isItNeeded) return;
 		Numero.GetParent<TextureRect>().Texture = UpgradeTextures[level-1];
 	}
@@ -48,9 +45,16 @@ public partial class UpgradeCard : Panel
 	public void UpdateText(int lvl)
 	{
 		level = lvl;
-		string[] texts = UpgradeTexts[level-1].Split(';');
-		Plus.Text = texts[0];
-		Minus.Text = texts[1];
+		if (UpgradeTexts != null) {
+			string[] texts = UpgradeTexts[level - 1].Split(';');
+			if (texts.Length > 1) {
+				Plus.Text = texts[0];
+				Minus.Text = texts[1];
+			}else {
+				if (UpgradeTexts[level - 1] != null)
+					Plus.Text = UpgradeTexts[level - 1];
+			}
+		}
 		Numero.Update(level);
 	}
 }

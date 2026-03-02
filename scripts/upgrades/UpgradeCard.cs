@@ -28,7 +28,7 @@ public partial class UpgradeCard : Panel
 
 	protected virtual void ApplyUpgradeToPlayer()
 	{
-		if (GetTree().GetFirstNodeInGroup("Player") is Unit player) {
+		if (GetTree().GetFirstNodeInGroup("player") is Unit player) {
 			int index = level - 1;
 			if (index >= 0 && index < UpgradeResources.Length) {
 				UnitResource upgrade = UpgradeResources[index];

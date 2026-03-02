@@ -3,23 +3,31 @@
 [ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_fv6ja"]
 [ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_6hrwv"]
 [ext_resource type="Texture2D" uid="uid://ydp2itej2sd1" path="res://assets/unitas/bash.png" id="2_a0n71"]
+[ext_resource type="Shader" uid="uid://c3efi14c6va2d" path="res://scenes/units/mobik.gdshader" id="2_lrxlt"]
 
 [sub_resource type="Resource" id="Resource_lrxlt"]
 script = ExtResource("2_6hrwv")
 Hp = 100.0
-Mp = 0.0
 metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0n71"]
 size = Vector2(30, 57)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_6hrwv"]
+shader = ExtResource("2_lrxlt")
+shader_parameter/speed = 2.0
+shader_parameter/amplitude = 20.0
+
 [node name="Alitar" unique_id=919433776 instance=ExtResource("1_fv6ja")]
 Stats = SubResource("Resource_lrxlt")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
-position = Vector2(-5, -28.5)
+position = Vector2(0, -29)
 shape = SubResource("RectangleShape2D_a0n71")
 
 [node name="Bash" type="Sprite2D" parent="." index="1" unique_id=1131285859]
-position = Vector2(-17, -16)
+material = SubResource("ShaderMaterial_6hrwv")
+position = Vector2(-6, -27)
 texture = ExtResource("2_a0n71")
+region_enabled = true
+region_rect = Rect2(60, 22, 32, 64)

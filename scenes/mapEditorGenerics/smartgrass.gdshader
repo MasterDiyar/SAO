@@ -21,7 +21,11 @@ void vertex() {
         current_amp = boost_amplitude;
 		float phase_offset = INSTANCE_CUSTOM.r * 10.0;
     	strength = 1.0 - UV.y;
-    	wind = 1.1;
+    	if (player_pos.x < world_pos.x) {
+            wind = 1.1;
+        } else {
+            wind = -1.1;
+        }
     }
 	else{
     	float phase_offset = INSTANCE_CUSTOM.r * 10.0;

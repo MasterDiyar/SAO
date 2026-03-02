@@ -41,4 +41,5 @@ texture = ExtResource("1_pkbir")
 
 [node name="SobChach" parent="." unique_id=876835232 instance=ExtResource("6_xovxq")]
 
-[node name="Monitor" parent="." unique_id=1822647779 instance=ExtResource("7_174p4")]
+[node name="Monitor" parent="." unique_id=1822647779 node_paths=PackedStringArray("pl") instance=ExtResource("7_174p4")]
+pl = NodePath("..")

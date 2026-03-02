@@ -14,13 +14,23 @@ offset_bottom = 490.0
 
 [node name="Control" type="Control" parent="." unique_id=1813894212]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+anchors_preset = 10
+anchor_right = 1.0
+grow_horizontal = 2
 
 [node name="Hp" type="Label" parent="Control" unique_id=254936543]
-layout_mode = 0
+layout_mode = 1
 offset_right = 40.0
 offset_bottom = 23.0
 text = "Hp: 100
 Armor: 100"
+
+[node name="ProgressBar" type="ProgressBar" parent="Control" unique_id=1809845630]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -136.0
+offset_right = 159.0
+offset_bottom = 27.0
+grow_horizontal = 2

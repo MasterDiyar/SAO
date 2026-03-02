@@ -10,6 +10,7 @@ public partial class Player : Unit
 	[Export] CpuParticles2D left, right;
 
 	private CardPicker _cardPicker;
+	public Action XpGained;
 	
 	private float time = 0;
 	public float Xp = 0;
@@ -45,6 +46,7 @@ public partial class Player : Unit
 	{
 		Xp += Mathf.Clamp(xp * XpAddModifier, 0.1f, xp * XpAddModifier);
 		GD.Print("Xp: " + Xp);
+		XpGained?.Invoke();
 		if (!(Xp >= XpToNextLevel)) return;
 		while (Xp >= XpToNextLevel)
 		{
@@ -52,6 +54,7 @@ public partial class Player : Unit
 			GiveUpgradeCards();
 			XpToNextLevel *= 1.6f;
 		}
+		
 	}
 
 	void GiveUpgradeCards()

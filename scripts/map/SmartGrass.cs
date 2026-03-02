@@ -33,8 +33,6 @@ public partial class SmartGrass : MultiMeshInstance2D
 			
 
 			Multimesh.SetInstanceTransform2D(i, transform);
-
-			//Multimesh.SetInstanceCustomData(i, new Color(rng.Randf(), 0, 0, 0));
 		}
 		
 		_material = Material as ShaderMaterial;

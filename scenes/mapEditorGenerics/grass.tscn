@@ -14,7 +14,7 @@ shader_parameter/height_factor = 4.0
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_1nqat"]
 shader = ExtResource("4_5e4rf")
 shader_parameter/player_pos = Vector2(10, 2)
-shader_parameter/interaction_radius = 20.0
+shader_parameter/interaction_radius = 32.0
 shader_parameter/speed = 2.0
 shader_parameter/amplitude = 0.1
 shader_parameter/boost_amplitude = 0.7
@@ -35,22 +35,20 @@ texture_filter = 3
 material = SubResource("ShaderMaterial_cqptl")
 script = ExtResource("1_v3id0")
 
-[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="." unique_id=1031074104 node_paths=PackedStringArray("Player")]
+[node name="MultiMeshInstance2D" type="MultiMeshInstance2D" parent="." unique_id=1031074104]
 material = SubResource("ShaderMaterial_1nqat")
 multimesh = SubResource("MultiMesh_15s7h")
 texture = SubResource("CompressedTexture2D_5e4rf")
 script = ExtResource("5_r341x")
-Player = NodePath("")
 AreaSize = Vector2(1150, 840)
 MinScale = 15.0
 MaxScale = 16.0
 
-[node name="MultiMeshInstance2D2" type="MultiMeshInstance2D" parent="." unique_id=1281408914 node_paths=PackedStringArray("Player")]
+[node name="MultiMeshInstance2D2" type="MultiMeshInstance2D" parent="." unique_id=1281408914]
 material = SubResource("ShaderMaterial_1nqat")
 multimesh = SubResource("MultiMesh_15s7h")
 texture = SubResource("CompressedTexture2D_5e4rf")
 script = ExtResource("5_r341x")
-Player = NodePath("")
 AreaSize = Vector2(1120, 840)
 MinScale = 15.0
 MaxScale = 16.0

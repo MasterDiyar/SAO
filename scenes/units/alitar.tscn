@@ -4,6 +4,8 @@
 [ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_6hrwv"]
 [ext_resource type="Texture2D" uid="uid://ydp2itej2sd1" path="res://assets/unitas/bash.png" id="2_a0n71"]
 [ext_resource type="Shader" uid="uid://c3efi14c6va2d" path="res://scenes/units/mobik.gdshader" id="2_lrxlt"]
+[ext_resource type="PackedScene" uid="uid://bvxgtaoyure2r" path="res://scenes/units/ai_behavior.tscn" id="5_lrxlt"]
+[ext_resource type="PackedScene" uid="uid://daphdgilty5ru" path="res://scenes/weapons/lidar_bazer.tscn" id="6_qjo6s"]
 
 [sub_resource type="Resource" id="Resource_lrxlt"]
 script = ExtResource("2_6hrwv")
@@ -22,12 +24,16 @@ shader_parameter/amplitude = 20.0
 Stats = SubResource("Resource_lrxlt")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
-position = Vector2(0, -29)
 shape = SubResource("RectangleShape2D_a0n71")
 
 [node name="Bash" type="Sprite2D" parent="." index="1" unique_id=1131285859]
 material = SubResource("ShaderMaterial_6hrwv")
-position = Vector2(-6, -27)
+position = Vector2(-5, 2)
 texture = ExtResource("2_a0n71")
 region_enabled = true
 region_rect = Rect2(60, 22, 32, 64)
+
+[node name="aiBehavior" parent="." index="2" unique_id=1348726942 instance=ExtResource("5_lrxlt")]
+Escalation = 1
+
+[node name="LidarBazer" parent="." index="3" unique_id=1166905945 instance=ExtResource("6_qjo6s")]

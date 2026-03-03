@@ -21,6 +21,8 @@ project/assembly_name="SAO"
 [global_group]
 
 player=""
+trigger=""
+weapon=""
 
 [input]
 

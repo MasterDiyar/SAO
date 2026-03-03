@@ -1,3 +1,6 @@
 [gd_scene format=3 uid="uid://bvxgtaoyure2r"]
 
+[ext_resource type="Script" uid="uid://ddrl72k2i1tdm" path="res://scripts/units/AiBehavior.cs" id="1_i2qys"]
+
 [node name="aiBehavior" type="Node2D" unique_id=1348726942]
+script = ExtResource("1_i2qys")

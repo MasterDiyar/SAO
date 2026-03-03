@@ -7,13 +7,10 @@ uniform float amplitude = 20.0;
 uniform float boost_amplitude = 60.0; // Амплитуда при касании
 
 void vertex() {
-    // 1. Получаем мировую позицию конкретного инстанса травы
     vec2 world_pos = (MODEL_MATRIX * vec4(0.0, 0.0, 0.0, 1.0)).xy;
     
-    // 2. Считаем расстояние до игрока
     float dist = distance(world_pos, player_pos);
     
-    // 3. Определяем силу колыхания: если близко — используем boost_amplitude
     float current_amp = amplitude;
 	float wind = .0;
 	float strength = .0;

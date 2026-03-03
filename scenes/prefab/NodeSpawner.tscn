@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bjpdwkye0oo1d"]
+
+[ext_resource type="Script" uid="uid://bto5sdgf2is1f" path="res://scripts/units/Rost.cs" id="1_co0d6"]
+
+[node name="Timer" type="Timer" unique_id=415249626]
+script = ExtResource("1_co0d6")

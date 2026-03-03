@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c36l0w7li2qqb"]
+
+[ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_g3kmu"]
+[ext_resource type="Texture2D" uid="uid://bc6u12twhuok2" path="res://assets/unitas/nobash.png" id="2_yi2ii"]
+[ext_resource type="PackedScene" uid="uid://bjpdwkye0oo1d" path="res://scenes/prefab/NodeSpawner.tscn" id="3_yi2ii"]
+[ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="4_mou2b"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mou2b"]
+size = Vector2(5, 11)
+
+[node name="noBash" unique_id=919433776 instance=ExtResource("1_g3kmu")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
+position = Vector2(-0.5, -0.5)
+shape = SubResource("RectangleShape2D_mou2b")
+
+[node name="Nobash" type="Sprite2D" parent="." index="1" unique_id=1266765541]
+texture = ExtResource("2_yi2ii")
+
+[node name="Timer" parent="." index="2" unique_id=415249626 instance=ExtResource("3_yi2ii")]
+wait_time = 27.0
+toWhom = ExtResource("4_mou2b")

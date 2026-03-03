@@ -2,5 +2,5 @@
 
 [ext_resource type="Script" uid="uid://b7fmbooebvvi1" path="res://scripts/weapons/Weapon.cs" id="1_d7anw"]
 
-[node name="Weapon" type="Node2D" unique_id=1166905945]
+[node name="Weapon" type="Node2D" unique_id=1166905945 groups=["weapon"]]
 script = ExtResource("1_d7anw")

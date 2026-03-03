@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://daphdgilty5ru"]
+
+[ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_8iqgc"]
+[ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="2_n8efe"]
+[ext_resource type="PackedScene" uid="uid://bhl7d6jyv7iss" path="res://scenes/weapons/bullet_factory.tscn" id="3_de2rn"]
+[ext_resource type="PackedScene" uid="uid://cs7t3ne1f1uaj" path="res://scenes/bullet/seperma.tscn" id="4_lejtw"]
+[ext_resource type="PackedScene" uid="uid://b4q1mbarsx700" path="res://scenes/weapons/on_tree_spawner.tscn" id="5_tywn8"]
+
+[node name="LidarBazer" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_8iqgc")]
+Trigger = NodePath("Trigger")
+_factory = NodePath("BulletFactory")
+_spawner = NodePath("OnTreeSpawner")
+
+[node name="Trigger" parent="." index="0" unique_id=1013342501 instance=ExtResource("2_n8efe")]
+
+[node name="BulletFactory" parent="." index="1" unique_id=591390071 instance=ExtResource("3_de2rn")]
+BulletScene = ExtResource("4_lejtw")
+
+[node name="OnTreeSpawner" parent="." index="2" unique_id=1118376102 instance=ExtResource("5_tywn8")]

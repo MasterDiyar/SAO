@@ -1,6 +1,7 @@
 using Godot;
 using System;
 
+[Obsolete("Пока что AiBehavior не делегирует задачи между другими")]
 public partial class MoveToPlayer : Node2D
 {
 	[ExportGroup("Movement")] 
@@ -15,10 +16,4 @@ public partial class MoveToPlayer : Node2D
 		player = (Unit)GetTree().GetFirstNodeInGroup("player");
 	}
 
-	public override void _Process(double delta)
-	{
-		
-		
-		
-	}
 }

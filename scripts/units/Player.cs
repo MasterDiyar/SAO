@@ -19,6 +19,7 @@ public partial class Player : Unit
 
 	public override void _Ready()
 	{
+		base._Ready();
 		_cardPicker = GetNode<CardPicker>("Monitor/CardPicker");
 		
 		XpAddModifier = Stats.XpGainMultiplier;

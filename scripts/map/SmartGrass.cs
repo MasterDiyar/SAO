@@ -40,9 +40,9 @@ public partial class SmartGrass : MultiMeshInstance2D
 	
 	public override void _Process(double delta)
 	{
-		if (Player != null && _material != null)
-		{
+		if (Player == null || _material == null) return;
+		if (IsInstanceValid(Player))
 			_material.SetShaderParameter("player_pos", Player.GlobalPosition);
-		}
+		else SetProcess(false);
 	}
 }

@@ -25,6 +25,7 @@ public partial class Unit : CharacterBody2D
 
 	public void TakeDamage(float damage)
 	{
+		GD.Print("Damage: " + damage);
 		if (CurrentArmor > 0) {
 			CurrentArmor -= damage;
 			OnArmorChange?.Invoke(CurrentArmor, CurrentArmor + damage);

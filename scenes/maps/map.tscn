@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="2_ce1uw"]
 [ext_resource type="PackedScene" uid="uid://c5wjiorthgmaa" path="res://scenes/debug/debug_node.tscn" id="3_ce1uw"]
 [ext_resource type="PackedScene" uid="uid://b8dybuts3lcpm" path="res://scenes/mapEditorGenerics/grass.tscn" id="5_idmyr"]
+[ext_resource type="PackedScene" uid="uid://c36l0w7li2qqb" path="res://scenes/units/no_bash.tscn" id="6_xltkm"]
 
 [node name="map" type="Node2D" unique_id=2134827611]
 script = ExtResource("1_1gdup")
@@ -22,3 +23,6 @@ position = Vector2(871, 277)
 [node name="Grass" parent="." unique_id=2010142176 instance=ExtResource("5_idmyr")]
 position = Vector2(-106, 750)
 scale = Vector2(4, -4)
+
+[node name="noBash" parent="." unique_id=1911781026 instance=ExtResource("6_xltkm")]
+position = Vector2(102.7272, 384.9578)

@@ -19,6 +19,14 @@ public partial class PlayerUI : CanvasLayer
 		Armor = pl.Stats.Armor;
 		pB = GetNode<ProgressBar>("Control/ProgressBar");
 		HpLabel = GetNode<Label>("Control/Hp");
+		GlobalUpdate();
+	}
+
+	internal void GlobalUpdate()
+	{
+		OnArmorChange(Armor, Armor);
+		OnHealthChange(Hp, Hp);
+		XpGained();
 	}
 
 	private void OnHealthChange(float arg1, float arg2)

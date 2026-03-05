@@ -8,10 +8,11 @@ using bullets;
 public partial class BulletFactory : Node2D
 {
     [Export] public PackedScene BulletScene;
-    [Export] public int Count = 1; 
+    [Export] public int   Count        = 1; 
     [Export] public float BetweenAngle = 0; 
-    [Export] public float BulletScale = 1; 
-    [Export] public float Offset = 0; 
+    [Export] public float BulletScale  = 1; 
+    [Export] public float Offset       = 0;
+    [Export] public float AngleOffset  = 0;
 
     public virtual List<Bullet> CreateBullets(Vector2 originPosition, float baseAngle)
     {
@@ -25,7 +26,7 @@ public partial class BulletFactory : Node2D
 
             Bullet bt = BulletScene.Instantiate<Bullet>();
 
-            bt.Rotation = angle + BetweenAngle * i; 
+            bt.Rotation = AngleOffset + angle + BetweenAngle * i; 
             bt.GlobalPosition = originPosition + Vector2.FromAngle(angle+ BetweenAngle * i) * Offset;
             bt.GlobalScale *= BulletScale;
 

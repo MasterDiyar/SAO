@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bpcl6jwkpt0cu"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_vwcdc"]
+[ext_resource type="Texture2D" uid="uid://chv1wc3u6u00y" path="res://assets/unitas/superHmpfu.png" id="2_s6dkk"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i36tj"]
+radius = 6.5
+height = 20.0
+
+[node name="Hyperbloda" unique_id=1728971169 instance=ExtResource("1_vwcdc")]
+Damage = 40.0
+Speed = 300.0
+LifeTime = 12.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+position = Vector2(0, 0.5)
+rotation = 1.5707964
+shape = SubResource("CapsuleShape2D_i36tj")
+
+[node name="SuperHmpfu" type="Sprite2D" parent="." index="1" unique_id=66939521]
+texture = ExtResource("2_s6dkk")

@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://c5hatcaica20h"]
+
+[ext_resource type="PackedScene" uid="uid://d070enfgtkdph" path="res://scenes/prefab/upgrade_card.tscn" id="1_fmkwt"]
+[ext_resource type="Script" uid="uid://d0qvk1t884243" path="res://scripts/upgrades/NeckUpgrade.cs" id="2_um4c6"]
+[ext_resource type="Texture2D" uid="uid://ewtmqmblyijt" path="res://assets/upgrades/double.png" id="3_wwqyf"]
+
+[node name="DoubleAttack" unique_id=469955785 instance=ExtResource("1_fmkwt")]
+script = ExtResource("2_um4c6")
+whichOne = 1
+
+[node name="Texture" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="1" unique_id=1413686888]
+texture = ExtResource("3_wwqyf")

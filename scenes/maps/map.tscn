@@ -3,12 +3,15 @@
 [ext_resource type="Script" uid="uid://dp5oew4fl1trc" path="res://scripts/map/Map.cs" id="1_1gdup"]
 [ext_resource type="PackedScene" uid="uid://b8kfwqi1lltis" path="res://scenes/units/player.tscn" id="1_ry644"]
 [ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="2_ce1uw"]
+[ext_resource type="PackedScene" uid="uid://bu5ed26qvetpd" path="res://scenes/mapEditorGenerics/eartr.tscn" id="2_elcdo"]
 [ext_resource type="PackedScene" uid="uid://c5wjiorthgmaa" path="res://scenes/debug/debug_node.tscn" id="3_ce1uw"]
 [ext_resource type="PackedScene" uid="uid://b8dybuts3lcpm" path="res://scenes/mapEditorGenerics/grass.tscn" id="5_idmyr"]
 [ext_resource type="PackedScene" uid="uid://c36l0w7li2qqb" path="res://scenes/units/no_bash.tscn" id="6_xltkm"]
 
 [node name="map" type="Node2D" unique_id=2134827611]
 script = ExtResource("1_1gdup")
+
+[node name="TileMapLayer" parent="." unique_id=1812348943 instance=ExtResource("2_elcdo")]
 
 [node name="Player" parent="." unique_id=511997155 instance=ExtResource("1_ry644")]
 position = Vector2(299, 147)

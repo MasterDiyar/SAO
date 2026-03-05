@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://cg0y5qavg61c6"]
+
+[ext_resource type="PackedScene" uid="uid://d070enfgtkdph" path="res://scenes/prefab/upgrade_card.tscn" id="1_ggl04"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_7ej40"]
+[ext_resource type="Texture2D" uid="uid://clf6t74pw2s6p" path="res://assets/upgrades/speed.png" id="3_l1ieg"]
+
+[sub_resource type="Resource" id="Resource_pt3ts"]
+script = ExtResource("2_7ej40")
+Speed = 1.0
+SpeedMultiplier = 1.05
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_drp7m"]
+script = ExtResource("2_7ej40")
+SpeedMultiplier = 1.1
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_2tdmw"]
+script = ExtResource("2_7ej40")
+Speed = 2.0
+SpeedMultiplier = 1.15
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_rj0vo"]
+script = ExtResource("2_7ej40")
+SpeedMultiplier = 1.1
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="Resource" id="Resource_kjx5s"]
+script = ExtResource("2_7ej40")
+Speed = 3.0
+SpeedMultiplier = 1.25
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[node name="SpeedCard" unique_id=469955785 instance=ExtResource("1_ggl04")]
+UpgradeTexts = PackedStringArray("Speed: +5% +1m/s", "Speed: +10%", "Speed: +15% +2m/s", "Speed: +10%", "Speed: +25% +3m/s")
+UpgradeResources = [SubResource("Resource_pt3ts"), SubResource("Resource_drp7m"), SubResource("Resource_2tdmw"), SubResource("Resource_rj0vo"), SubResource("Resource_kjx5s")]
+
+[node name="Name" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="0" unique_id=674010380]
+text = "Speed"
+
+[node name="Texture" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="1" unique_id=1413686888]
+texture = ExtResource("3_l1ieg")
+
+[node name="Plus" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="2" unique_id=899645561]
+text = "Speed +5%"

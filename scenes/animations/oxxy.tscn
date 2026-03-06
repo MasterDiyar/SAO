@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://bnp5ba8yb4625"]
+
+[ext_resource type="Script" uid="uid://dmnwntppdchmu" path="res://scripts/units/Oxxy.cs" id="1_6ln2r"]
+[ext_resource type="Texture2D" uid="uid://dxsqkknnk44ym" path="res://assets/unitas/Oxxy.png" id="1_qbt3d"]
+
+[node name="Oxxy" type="Node2D" unique_id=1155289847]
+texture_filter = 3
+script = ExtResource("1_6ln2r")
+
+[node name="body" type="Sprite2D" parent="." unique_id=1153002626]
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(96, 0, 32, 40)
+
+[node name="leftleaf" type="Sprite2D" parent="body" unique_id=1599078276]
+position = Vector2(-6, -9)
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="rightleaf" type="Sprite2D" parent="body" unique_id=1113337521]
+position = Vector2(10, -8)
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="head" type="Sprite2D" parent="body" unique_id=546271723]
+position = Vector2(-2, -9)
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(64, 0, 32, 32)
+
+[node name="mouth" type="Sprite2D" parent="body/head" unique_id=1534411789]
+position = Vector2(-3, 5)
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(4, 37, 4, 1)
+
+[node name="leftEar" type="Sprite2D" parent="body/head" unique_id=356712656]
+position = Vector2(-5, 3)
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(3, 43, 4, 2)
+
+[node name="rightEar" type="Sprite2D" parent="body/head" unique_id=359093353]
+position = Vector2(0, 3)
+texture = ExtResource("1_qbt3d")
+region_enabled = true
+region_rect = Rect2(9, 43, 4, 2)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=2000714737]
+
+[node name="Attacl" type="Sprite2D" parent="." unique_id=365525125]

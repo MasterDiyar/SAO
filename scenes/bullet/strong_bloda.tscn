@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://blkslbpueqslb"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_7rwdi"]
+[ext_resource type="Texture2D" uid="uid://cx1et5dex440x" path="res://assets/unitas/hardnedhmpfu.png" id="2_do4e3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kwwg2"]
+size = Vector2(12, 4)
+
+[node name="strongBloda" unique_id=1728971169 instance=ExtResource("1_7rwdi")]
+Damage = 28.0
+Speed = 350.0
+LifeTime = 11.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("RectangleShape2D_kwwg2")
+
+[node name="Hardnedhmpfu" type="Sprite2D" parent="." index="1" unique_id=1002035039]
+texture = ExtResource("2_do4e3")

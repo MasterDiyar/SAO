@@ -4,9 +4,24 @@
 [ext_resource type="Script" uid="uid://d0qvk1t884243" path="res://scripts/upgrades/NeckUpgrade.cs" id="2_um4c6"]
 [ext_resource type="Texture2D" uid="uid://ewtmqmblyijt" path="res://assets/upgrades/double.png" id="3_wwqyf"]
 
+[sub_resource type="LabelSettings" id="LabelSettings_fmkwt"]
+font_size = 12
+
 [node name="DoubleAttack" unique_id=469955785 instance=ExtResource("1_fmkwt")]
 script = ExtResource("2_um4c6")
 whichOne = 1
 
+[node name="Name" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="0" unique_id=674010380]
+text = "Double attack"
+
 [node name="Texture" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="1" unique_id=1413686888]
 texture = ExtResource("3_wwqyf")
+
+[node name="Plus" parent="VBoxContainer" parent_id_path=PackedInt32Array(1426114269) index="2" unique_id=899645561]
+size_flags_vertical = 6
+size_flags_stretch_ratio = 0.1
+text = "adds weapon with
+2 additional bullets"
+label_settings = SubResource("LabelSettings_fmkwt")
+clip_text = true
+text_overrun_behavior = 2

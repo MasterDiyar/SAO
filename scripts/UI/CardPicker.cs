@@ -16,6 +16,7 @@ public partial class CardPicker : Control
         HBoxContainer = GetNode<HBoxContainer>("MarginContainer/HBoxContainer");
         ExitButton.Pressed += () => Toggle(false);
         rng.Randomize();
+        Toggle(false);
     }
 
     public void Shuffle()

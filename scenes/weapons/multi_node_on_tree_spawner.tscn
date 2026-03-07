@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://df0rdvy6uk82q"]
+
+[ext_resource type="Script" uid="uid://f8al7af8jss7" path="res://scripts/weapons/MultiNodeAddSpawner.cs" id="1_7efga"]
+
+[node name="MultiNodeOnTreeSpawner" type="Node" unique_id=763028231]
+script = ExtResource("1_7efga")

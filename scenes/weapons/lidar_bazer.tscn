@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://cs7t3ne1f1uaj" path="res://scenes/bullet/seperma.tscn" id="4_lejtw"]
 [ext_resource type="PackedScene" uid="uid://b4q1mbarsx700" path="res://scenes/weapons/on_tree_spawner.tscn" id="5_tywn8"]
 
-[node name="LidarBazer" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_8iqgc")]
+[node name="LidarBazer" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "Factory", "Spawner") instance=ExtResource("1_8iqgc")]
 Trigger = NodePath("Trigger")
-_factory = NodePath("BulletFactory")
-_spawner = NodePath("OnTreeSpawner")
+Factory = NodePath("BulletFactory")
+Spawner = NodePath("OnTreeSpawner")
 
 [node name="Trigger" parent="." index="0" unique_id=1013342501 instance=ExtResource("2_n8efe")]
 

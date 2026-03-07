@@ -1,14 +1,21 @@
 [gd_scene format=3 uid="uid://c36l0w7li2qqb"]
 
 [ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_g3kmu"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_1yrxw"]
 [ext_resource type="Texture2D" uid="uid://bc6u12twhuok2" path="res://assets/unitas/nobash.png" id="2_yi2ii"]
 [ext_resource type="PackedScene" uid="uid://bjpdwkye0oo1d" path="res://scenes/prefab/NodeSpawner.tscn" id="3_yi2ii"]
 [ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="4_mou2b"]
+
+[sub_resource type="Resource" id="Resource_uxk4g"]
+script = ExtResource("2_1yrxw")
+Hp = 200.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mou2b"]
 size = Vector2(5, 11)
 
 [node name="noBash" unique_id=919433776 instance=ExtResource("1_g3kmu")]
+Stats = SubResource("Resource_uxk4g")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
 position = Vector2(-0.5, -0.5)

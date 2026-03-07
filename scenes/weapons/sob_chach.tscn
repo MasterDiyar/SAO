@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="4_8ouch"]
 [ext_resource type="PackedScene" uid="uid://16dgwfwvjl5j" path="res://scenes/bullet/bloda.tscn" id="4_rcr0e"]
 
-[node name="SobChach" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_fr1qd")]
+[node name="SobChach" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "Factory", "Spawner") instance=ExtResource("1_fr1qd")]
 Trigger = NodePath("Trigger")
-_factory = NodePath("BulletFactory")
-_spawner = NodePath("OnTreeSpawner")
+Factory = NodePath("BulletFactory")
+Spawner = NodePath("OnTreeSpawner")
 
 [node name="OnTreeSpawner" parent="." index="0" unique_id=1118376102 instance=ExtResource("2_rcr0e")]
 

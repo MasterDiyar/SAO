@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://cw7nxc8rv8sda"]
+
+[ext_resource type="Script" uid="uid://e1g4pye2vq0q" path="res://scripts/bullets/OnDieNode.cs" id="1_6sbhe"]
+
+[node name="OnDieNode" type="Node2D" unique_id=515210899]
+script = ExtResource("1_6sbhe")

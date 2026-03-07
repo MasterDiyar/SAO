@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://h0drgmm1p2qi"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_7e46n"]
+[ext_resource type="Script" uid="uid://cqdywt7b2pfm0" path="res://scripts/bullets/Burst.cs" id="2_5j0yq"]
+[ext_resource type="Texture2D" uid="uid://c13ysoqyig3ae" path="res://assets/unitas/miron1.png" id="2_6xc8d"]
+[ext_resource type="Texture2D" uid="uid://ctfisc5yu2udj" path="res://assets/unitas/miron2.png" id="3_5j0yq"]
+[ext_resource type="Texture2D" uid="uid://c1lbwvnbdd2iq" path="res://assets/unitas/miron3.png" id="4_b72da"]
+[ext_resource type="Texture2D" uid="uid://bnw3wxbqchlab" path="res://assets/unitas/miron4.png" id="5_gx0ef"]
+[ext_resource type="Texture2D" uid="uid://geu5lqqhgekt" path="res://assets/unitas/miron5.png" id="6_bq817"]
+[ext_resource type="Texture2D" uid="uid://dim8xrgqbfb6l" path="res://assets/unitas/miron6.png" id="7_kj3gp"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xeujv"]
+radius = 26.019224
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_khgbm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_6xc8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_5j0yq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_b72da")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gx0ef")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_bq817")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_kj3gp")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Bust" unique_id=1728971169 instance=ExtResource("1_7e46n")]
+script = ExtResource("2_5j0yq")
+Damage = 40.0
+Speed = 0.0
+AngularVelocity = 7.0
+LifeTime = 1.0
+OnTouchConsume = 0.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("CircleShape2D_xeujv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1" unique_id=241947748]
+sprite_frames = SubResource("SpriteFrames_khgbm")

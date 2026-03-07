@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://ddlee5thu5oo6" path="res://scenes/bullet/strong_orb.tscn" id="4_srody"]
 [ext_resource type="PackedScene" uid="uid://dg8mefwvmbqpk" path="res://scenes/weapons/on_player_spawner.tscn" id="5_pk54s"]
 
-[node name="Marlow" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_a1pil")]
+[node name="Marlow" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "Factory", "Spawner") instance=ExtResource("1_a1pil")]
 Trigger = NodePath("Trigger")
-_factory = NodePath("OnPlayerBulletFactory")
-_spawner = NodePath("OnPlayerSpawner")
+Factory = NodePath("OnPlayerBulletFactory")
+Spawner = NodePath("OnPlayerSpawner")
 randomA = true
 
 [node name="Trigger" parent="." index="0" unique_id=1013342501 instance=ExtResource("2_j2bt8")]

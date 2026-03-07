@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bviexyyq5oatt"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_6v4he"]
+[ext_resource type="Texture2D" uid="uid://bqd7u66ty48uq" path="res://assets/unitas/seed.png" id="2_uyehc"]
+[ext_resource type="PackedScene" uid="uid://cw7nxc8rv8sda" path="res://scenes/weapons/on_die_node.tscn" id="3_wxp4t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7cr5k"]
+radius = 3.1622777
+
+[node name="ssede" unique_id=1728971169 instance=ExtResource("1_6v4he")]
+Speed = 160.0
+AngularVelocity = 1.0
+OnTouchConsume = 10.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+position = Vector2(2, 1)
+shape = SubResource("CircleShape2D_7cr5k")
+
+[node name="Seed" type="Sprite2D" parent="." index="1" unique_id=493707372]
+texture = ExtResource("2_uyehc")
+
+[node name="OnDieNode" parent="." index="2" unique_id=515210899 instance=ExtResource("3_wxp4t")]
+_type = 1

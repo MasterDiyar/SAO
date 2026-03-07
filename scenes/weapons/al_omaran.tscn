@@ -6,10 +6,10 @@
 [ext_resource type="PackedScene" uid="uid://dg8mefwvmbqpk" path="res://scenes/weapons/on_player_spawner.tscn" id="4_1wt4k"]
 [ext_resource type="PackedScene" uid="uid://byujqdsoy8ryq" path="res://scenes/bullet/hard_orb.tscn" id="4_ly1lp"]
 
-[node name="Al_Omaran" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "_factory", "_spawner") instance=ExtResource("1_exjxm")]
+[node name="Al_Omaran" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "Factory", "Spawner") instance=ExtResource("1_exjxm")]
 Trigger = NodePath("Trigger")
-_factory = NodePath("OnPlayerBulletFactory")
-_spawner = NodePath("OnPlayerSpawner")
+Factory = NodePath("OnPlayerBulletFactory")
+Spawner = NodePath("OnPlayerSpawner")
 randomA = true
 
 [node name="Trigger" parent="." index="0" unique_id=1013342501 instance=ExtResource("2_ly1lp")]

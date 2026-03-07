@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Linq;
 
 namespace SAO.scripts.weapons;
 
@@ -12,6 +13,9 @@ public partial class Weapon : Node2D
 	public override void _Ready()
 	{
 		Trigger.ShootRequested += OnShootRequested;
+		Trigger ??= GetChildren().OfType<WeaponTrigger>().FirstOrDefault();
+		Factory ??= GetChildren().OfType<BulletFactory>().FirstOrDefault();
+		Spawner ??= GetChildren().OfType<BulletSpawner>().FirstOrDefault();
 	}
 
 	private void OnShootRequested(float angle)

@@ -36,7 +36,6 @@ public partial class AiBehavior : Node2D
 
 	void GetBehavior()
 	{
-		GD.Print("GetBehavior");
 		NowB = rng.RandiRange(0, 4);
 		switch (NowB)
 		{
@@ -62,7 +61,6 @@ public partial class AiBehavior : Node2D
 				weapon.RequestAttack(( player.GlobalPosition - GlobalPosition).Angle());
 			
 		}
-		else GD.Print("dist:" + player.GlobalPosition.DistanceTo(GlobalPosition));
 	}
 
 

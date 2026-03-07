@@ -3,9 +3,11 @@
 [ext_resource type="Script" uid="uid://dmnwntppdchmu" path="res://scripts/units/Oxxy.cs" id="1_6ln2r"]
 [ext_resource type="Texture2D" uid="uid://dxsqkknnk44ym" path="res://assets/unitas/Oxxy.png" id="1_qbt3d"]
 
-[node name="Oxxy" type="Node2D" unique_id=1155289847]
+[node name="Oxxy" type="Node2D" unique_id=1155289847 node_paths=PackedStringArray("lLeaf", "rLeaf")]
 texture_filter = 3
 script = ExtResource("1_6ln2r")
+lLeaf = NodePath("body/leftleaf")
+rLeaf = NodePath("body/rightleaf")
 
 [node name="body" type="Sprite2D" parent="." unique_id=1153002626]
 texture = ExtResource("1_qbt3d")
@@ -47,7 +49,5 @@ position = Vector2(0, 3)
 texture = ExtResource("1_qbt3d")
 region_enabled = true
 region_rect = Rect2(9, 43, 4, 2)
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=2000714737]
 
 [node name="Attacl" type="Sprite2D" parent="." unique_id=365525125]

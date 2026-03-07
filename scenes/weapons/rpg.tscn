@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://b2eogjjk8sgil"]
+
+[ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_db1a1"]
+[ext_resource type="PackedScene" uid="uid://df0rdvy6uk82q" path="res://scenes/weapons/multi_node_on_tree_spawner.tscn" id="2_cuvca"]
+[ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="3_cnqvu"]
+[ext_resource type="PackedScene" uid="uid://bhl7d6jyv7iss" path="res://scenes/weapons/bullet_factory.tscn" id="4_gc8p1"]
+[ext_resource type="PackedScene" uid="uid://bviexyyq5oatt" path="res://scenes/bullet/ssede.tscn" id="5_cuvca"]
+
+[node name="RPG" unique_id=1166905945 node_paths=PackedStringArray("Trigger", "Factory", "Spawner") instance=ExtResource("1_db1a1")]
+Trigger = NodePath("Trigger")
+Factory = NodePath("BulletFactory")
+Spawner = NodePath("MultiNodeOnTreeSpawner")
+
+[node name="MultiNodeOnTreeSpawner" parent="." index="0" unique_id=763028231 instance=ExtResource("2_cuvca")]
+scenes = Array[PackedScene]([])
+
+[node name="Trigger" parent="." index="1" unique_id=1013342501 instance=ExtResource("3_cnqvu")]
+AttackSpeed = 2.5
+
+[node name="BulletFactory" parent="." index="2" unique_id=591390071 instance=ExtResource("4_gc8p1")]
+BulletScene = ExtResource("5_cuvca")

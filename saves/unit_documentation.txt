@@ -1,0 +1,26 @@
+Unit json how to add new
+
+1) Name
+2) Texture path
+3) Properties in array of 8 items in this order:
+Health point
+Strength
+Mana point
+Speed
+Armor
+Intellegence
+Krit Multiplier
+Krit Damage
+
+how each one should work
+
+hp is hp. when unit hurts it wont regenerate until upgrade or end of phaze.
+strength is multiplier for melee damage.
+mana points is used for magic attacks.
+armor is armor. When unit hurts it regenerate after 15 seconds of non taking damage with Strength like Armor += Strength
+	{
+     "Name" : "",
+     "TexturePath" : "",
+     "Properties" : []
+     
+   }

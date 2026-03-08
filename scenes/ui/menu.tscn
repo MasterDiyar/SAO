@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://opnrii4u3lo6" path="res://scripts/UI/Menu.cs" id="1_7w7rl"]
 
-[node name="Menu" type="Control" unique_id=2067629432]
+[node name="Menu" type="Control" unique_id=2067629432 node_paths=PackedStringArray("play", "opt", "exit")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -10,6 +10,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_7w7rl")
+play = NodePath("VBoxContainer/Button")
+opt = NodePath("VBoxContainer/Button2")
+exit = NodePath("VBoxContainer/Button3")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=315667532]
 layout_mode = 1

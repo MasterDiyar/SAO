@@ -12,8 +12,8 @@ public partial class Menu : Control
 
 	private void PlayOnPressed()
 	{
-		
-		
+		var a =GD.Load<PackedScene>("res://scenes/ui/chooser.tscn").Instantiate<Chooser>();
+		GetTree().Root.AddChild(a);
 		QueueFree();
 	}
 }

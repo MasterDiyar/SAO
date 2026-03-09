@@ -21,6 +21,7 @@ armor is armor. When unit hurts it regenerate after 15 seconds of non taking dam
 	{
      "Name" : "",
      "TexturePath" : "",
+     "Scene" : "",
      "Properties" : []
      
    }

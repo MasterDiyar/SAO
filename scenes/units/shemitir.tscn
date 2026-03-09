@@ -1,0 +1,64 @@
+[gd_scene format=3 uid="uid://brxhycisbw0b7"]
+
+[ext_resource type="Script" uid="uid://bet7w3f35f3lj" path="res://scripts/units/Player.cs" id="1_i75bt"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_62mb2"]
+[ext_resource type="PackedScene" uid="uid://wl8t56fe0k6c" path="res://scenes/particles/fire_hot.tscn" id="2_t4o4k"]
+[ext_resource type="Texture2D" uid="uid://bhlh271yyw72j" path="res://assets/unitas/Mercator.png" id="3_62mb2"]
+[ext_resource type="PackedScene" uid="uid://bm6axyrtuav5s" path="res://scenes/player/monitor.tscn" id="5_pulrj"]
+[ext_resource type="PackedScene" uid="uid://cfob02e07h2jw" path="res://scenes/weapons/red_room.tscn" id="6_bejcv"]
+
+[sub_resource type="Resource" id="Resource_pulrj"]
+script = ExtResource("2_62mb2")
+Hp = 150.0
+Strength = 40.0
+Mp = 150.0
+Speed = 130.0
+Armor = 320.0
+Intellegence = 12.0
+KritMultiplier = 2.0
+KritChance = 40.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bejcv"]
+radius = 15.0
+height = 56.0
+
+[node name="Shemitir" type="CharacterBody2D" unique_id=296776465 node_paths=PackedStringArray("left", "right") groups=["player"]]
+texture_filter = 3
+script = ExtResource("1_i75bt")
+Amplitude = 8.0
+left = NodePath("left")
+right = NodePath("right")
+Stats = SubResource("Resource_pulrj")
+
+[node name="right" parent="." unique_id=915686076 instance=ExtResource("2_t4o4k")]
+position = Vector2(21.679405, 16.549603)
+rotation = 1.0471976
+spread = 15.0
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+
+[node name="left" parent="." unique_id=1453703827 instance=ExtResource("2_t4o4k")]
+position = Vector2(-14, 16)
+rotation = 2.0943952
+spread = 15.0
+initial_velocity_min = 60.0
+initial_velocity_max = 120.0
+
+[node name="Mercator" type="Sprite2D" parent="." unique_id=102795226]
+texture = ExtResource("3_62mb2")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1704082018]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1297516736]
+position = Vector2(4, -3)
+shape = SubResource("CapsuleShape2D_bejcv")
+
+[node name="Monitor" parent="." unique_id=1822647779 node_paths=PackedStringArray("pl") instance=ExtResource("5_pulrj")]
+pl = NodePath("..")
+
+[node name="RedRoom2" parent="." unique_id=909492972 instance=ExtResource("6_bejcv")]
+position = Vector2(19, 11)
+
+[node name="RedRoom" parent="." unique_id=1496135998 instance=ExtResource("6_bejcv")]
+position = Vector2(-10, 10)

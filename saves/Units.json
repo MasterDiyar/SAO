@@ -4,13 +4,13 @@
      "Name" : "Nil",
      "TexturePath" : "assets/unitas/Ufonat.png",
      "Scene" : "scenes/units/Player.tscn",
-     "Properties" : [8, 8, 8, 6, 8, 3, 3, 2]
+     "Properties" : [8, 5, 8, 6, 8, 3, 3, 2]
    },
    {
      "Name" : "Shemitir",
      "TexturePath" : "assets/unitas/Mercator.png",
      "Scene" : "scenes/units/Player.tscn",
-     "Properties" : []
+     "Properties" : [5, 8, 6, 9, 10, 6, 5, 4]
    }
  ] 
-}
+}                                                               

@@ -6,11 +6,13 @@ namespace SAO.scripts.weapons;
 
 public partial class OnPlayerSpawner : BulletSpawner
 {
-    public override void Spawn(List<Bullet> bullets, Node owner)
+    public override void Spawn(List<Bullet> bullets, Node owner, float addedDamage, float kritMultiplier)
     {
         foreach (var bt in bullets)
         {
             bt.Owner = owner;
+            bt.AddedDamage = addedDamage;
+            bt.KritMultiplier = kritMultiplier;
             GetParent().GetParent().AddChild(bt);
         }
     }

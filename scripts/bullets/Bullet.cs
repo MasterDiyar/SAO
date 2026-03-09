@@ -10,6 +10,7 @@ public partial class Bullet : Area2D
     [Export] public float AngularVelocity = 0;
     [Export] public float LifeTime = 10;
     [Export] public float OnTouchConsume = 1;
+    public float AddedDamage = 0, KritMultiplier = 1;
     public Node OwnerA;
     public Action Die;
 
@@ -23,7 +24,7 @@ public partial class Bullet : Area2D
     {
         if (h is not Unit uit) return;
         if (uit == OwnerA)     return;
-        uit.TakeDamage(Damage);
+        uit.TakeDamage((Damage + AddedDamage) * KritMultiplier);
         LifeTime -= OnTouchConsume;
         
         if (LifeTime <= 0) {

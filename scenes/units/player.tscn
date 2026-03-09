@@ -10,7 +10,7 @@
 [sub_resource type="Resource" id="Resource_xovxq"]
 script = ExtResource("2_rwmet")
 Hp = 250.0
-Strength = 20.0
+Strength = 24.0
 Mp = 200.0
 Speed = 80.0
 Armor = 256.0

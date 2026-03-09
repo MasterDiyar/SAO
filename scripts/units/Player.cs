@@ -87,7 +87,7 @@ public partial class Player : Unit
 	void taka()
 	{
 		if (Input.IsActionJustPressed("lm")) {
-			var wep = GetChildren().OfType<Weapon>().ToList();
+			var wep = GetChildren().OfType<BaseWeapon>().ToList();
 			foreach (var w in wep)
 				w.Trigger.RequestAttack((GetGlobalMousePosition()-GlobalPosition).Angle());
 		}

@@ -4,15 +4,26 @@
 [ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="2_ce1uw"]
 [ext_resource type="PackedScene" uid="uid://bu5ed26qvetpd" path="res://scenes/mapEditorGenerics/eartr.tscn" id="2_elcdo"]
 [ext_resource type="PackedScene" uid="uid://c5wjiorthgmaa" path="res://scenes/debug/debug_node.tscn" id="3_ce1uw"]
+[ext_resource type="Script" uid="uid://cu4mv6mr3x2hf" path="res://scripts/map/Eartr.cs" id="3_lwbun"]
 [ext_resource type="PackedScene" uid="uid://b8dybuts3lcpm" path="res://scenes/mapEditorGenerics/grass.tscn" id="5_idmyr"]
 [ext_resource type="PackedScene" uid="uid://c36l0w7li2qqb" path="res://scenes/units/no_bash.tscn" id="6_xltkm"]
 [ext_resource type="PackedScene" uid="uid://brxhycisbw0b7" path="res://scenes/units/shemitir.tscn" id="8_aewf8"]
 [ext_resource type="PackedScene" uid="uid://cra0tfrhgbw5w" path="res://scenes/units/oxxxy_miron.tscn" id="8_ttkqu"]
+[ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="10_lwbun"]
+
+[sub_resource type="Environment" id="Environment_ttkqu"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 0.92
+glow_blend_mode = 0
+fog_enabled = true
+fog_light_color = Color(0.34585017, 0.37055585, 0.40898696, 1)
 
 [node name="map" type="Node2D" unique_id=2134827611]
 script = ExtResource("1_1gdup")
 
 [node name="TileMapLayer" parent="." unique_id=1812348943 instance=ExtResource("2_elcdo")]
+script = ExtResource("3_lwbun")
 
 [node name="Alitar" parent="." unique_id=919433776 instance=ExtResource("2_ce1uw")]
 position = Vector2(871, 277)
@@ -30,3 +41,15 @@ position = Vector2(102.7272, 384.9578)
 position = Vector2(429, 115)
 
 [node name="Shemitir" parent="." unique_id=296776465 instance=ExtResource("8_aewf8")]
+
+[node name="PointLight2D" type="PointLight2D" parent="Shemitir" unique_id=110634299]
+energy = 1.44
+blend_mode = 2
+texture = ExtResource("10_lwbun")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=950949877]
+environment = SubResource("Environment_ttkqu")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2142429350]
+position = Vector2(-290, 111)
+color = Color(0.12386721, 0.07375953, 0.14176145, 1)

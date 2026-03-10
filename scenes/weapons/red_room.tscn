@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://d16gdoq5ydvug" path="res://scripts/weapons/RedRoom.cs" id="1_a41jf"]
 [ext_resource type="Texture2D" uid="uid://c6wnsu0pv43xi" path="res://assets/unitas/redroom.png" id="2_mrbf8"]
+[ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="3_1nhao"]
 [ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="3_mrbf8"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_1nhao"]
@@ -13,6 +14,7 @@ a = Vector2(-2, -16)
 b = Vector2(35, 0)
 
 [node name="RedRoom" type="Node2D" unique_id=909492972 node_paths=PackedStringArray("sword", "swordArea", "lien", "Trigger") groups=["weapon"]]
+modulate = Color(1.6832789, 1.6832789, 1.6832789, 1)
 texture_filter = 3
 script = ExtResource("1_a41jf")
 sword = NodePath("Redroom")
@@ -22,7 +24,9 @@ Trigger = NodePath("Trigger")
 damageType = 3
 
 [node name="Redroom" type="Sprite2D" parent="." unique_id=1627089399]
+modulate = Color(1.2061527, 1.2061527, 1.2061527, 1)
 position = Vector2(11, 0)
+scale = Vector2(0.5, 0.5)
 texture = ExtResource("2_mrbf8")
 
 [node name="First" type="Area2D" parent="Redroom" unique_id=363831187]
@@ -34,9 +38,17 @@ shape = SubResource("SegmentShape2D_1nhao")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Redroom/First" unique_id=1676320474]
 shape = SubResource("SegmentShape2D_1kw2g")
 
+[node name="PointLight2D" type="PointLight2D" parent="Redroom" unique_id=496325855]
+position = Vector2(-22, 0)
+scale = Vector2(2, 2)
+energy = 1.44
+blend_mode = 2
+texture = ExtResource("3_1nhao")
+texture_scale = 0.5
+height = 10.0
+
 [node name="Line2D" type="Line2D" parent="." unique_id=908363280]
 width = 2.0
 default_color = Color(0.70980394, 0.7137255, 0.6862745, 1)
 
 [node name="Trigger" parent="." unique_id=1013342501 instance=ExtResource("3_mrbf8")]
-AttackSpeed = 2.0

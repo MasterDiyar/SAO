@@ -12,6 +12,7 @@ offsets = PackedFloat32Array(0, 0.102564104, 0.28846154, 0.82051283, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.972549, 0.9490196, 0, 1, 1, 0.54509807, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
 
 [node name="fireHot" type="CPUParticles2D" unique_id=915686076]
+modulate = Color(1.563596, 1.563596, 1.563596, 1)
 texture_filter = 3
 amount = 25
 texture = ExtResource("1_u3qdw")

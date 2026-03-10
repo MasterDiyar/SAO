@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://bnp5ba8yb4625" path="res://scenes/animations/oxxy.tscn" id="2_twvas"]
 [ext_resource type="PackedScene" uid="uid://bvxgtaoyure2r" path="res://scenes/units/ai_behavior.tscn" id="3_twvas"]
 [ext_resource type="PackedScene" uid="uid://b2eogjjk8sgil" path="res://scenes/weapons/rpg.tscn" id="4_uxbor"]
+[ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="6_qcemu"]
 
 [sub_resource type="Resource" id="Resource_qcemu"]
 script = ExtResource("2_701hw")
@@ -32,3 +33,11 @@ me = NodePath("..")
 Escalation = 5
 
 [node name="RPG" parent="." index="3" unique_id=1166905945 instance=ExtResource("4_uxbor")]
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="4" unique_id=1544709683]
+position = Vector2(-9, -15)
+color = Color(1.4521534, 1.4521534, 1.4521534, 0.49019608)
+energy = 0.9
+blend_mode = 2
+texture = ExtResource("6_qcemu")
+texture_scale = 0.25

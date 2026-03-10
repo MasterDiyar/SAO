@@ -10,7 +10,7 @@ public partial class OnPlayerSpawner : BulletSpawner
     {
         foreach (var bt in bullets)
         {
-            bt.Owner = owner;
+            bt.OwnerA = owner;
             bt.AddedDamage = addedDamage;
             bt.KritMultiplier = kritMultiplier;
             GetParent().GetParent().AddChild(bt);

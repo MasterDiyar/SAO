@@ -27,26 +27,26 @@ height = 56.0
 texture_filter = 3
 script = ExtResource("1_i75bt")
 Amplitude = 8.0
-left = NodePath("left")
-right = NodePath("right")
+left = NodePath("Mercator/left")
+right = NodePath("Mercator/right")
 Stats = SubResource("Resource_pulrj")
 
-[node name="right" parent="." unique_id=915686076 instance=ExtResource("2_t4o4k")]
+[node name="Mercator" type="Sprite2D" parent="." unique_id=102795226 groups=["foto"]]
+texture = ExtResource("3_62mb2")
+
+[node name="right" parent="Mercator" unique_id=915686076 instance=ExtResource("2_t4o4k")]
 position = Vector2(21.679405, 16.549603)
 rotation = 1.0471976
 spread = 15.0
 initial_velocity_min = 60.0
 initial_velocity_max = 120.0
 
-[node name="left" parent="." unique_id=1453703827 instance=ExtResource("2_t4o4k")]
+[node name="left" parent="Mercator" unique_id=1453703827 instance=ExtResource("2_t4o4k")]
 position = Vector2(-14, 16)
 rotation = 2.0943952
 spread = 15.0
 initial_velocity_min = 60.0
 initial_velocity_max = 120.0
-
-[node name="Mercator" type="Sprite2D" parent="." unique_id=102795226]
-texture = ExtResource("3_62mb2")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1704082018]
 
@@ -58,7 +58,9 @@ shape = SubResource("CapsuleShape2D_bejcv")
 pl = NodePath("..")
 
 [node name="RedRoom2" parent="." unique_id=909492972 instance=ExtResource("6_bejcv")]
+modulate = Color(1.0384669, 1.0384669, 1.0384669, 1)
 position = Vector2(19, 11)
 
 [node name="RedRoom" parent="." unique_id=1496135998 instance=ExtResource("6_bejcv")]
+modulate = Color(1.0384669, 1.0384669, 1.0384669, 1)
 position = Vector2(-10, 10)

@@ -17,9 +17,14 @@ public partial class Player : Unit
 	public float XpToNextLevel = 50;
 	public float XpAddModifier = 1.0f;
 
+	private Node2D foto;
+
 	public override void _Ready()
 	{
 		base._Ready();
+		foreach (var gc in GetChildren())
+			if (gc.IsInGroup("foto"))
+				foto = gc as Node2D; 
 		_cardPicker = GetNode<CardPicker>("Monitor/CardPicker");
 		
 		XpAddModifier = Stats.XpGainMultiplier;
@@ -78,6 +83,8 @@ public partial class Player : Unit
 			var hi = inputDir.X > 0;
 			right.Emitting = !hi;
 			left.Emitting = hi;
+			if (foto is Sprite2D s) s.FlipH = !hi;
+			else if (foto is AnimatedSprite2D a) a.FlipH = !hi;
 		} else {
 			right.Emitting = true;
 			left.Emitting = true;

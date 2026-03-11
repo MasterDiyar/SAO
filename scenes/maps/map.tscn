@@ -2,14 +2,21 @@
 
 [ext_resource type="Script" uid="uid://dp5oew4fl1trc" path="res://scripts/map/Map.cs" id="1_1gdup"]
 [ext_resource type="PackedScene" uid="uid://dtjykejg6tfiw" path="res://scenes/units/alitar.tscn" id="2_ce1uw"]
-[ext_resource type="PackedScene" uid="uid://bu5ed26qvetpd" path="res://scenes/mapEditorGenerics/eartr.tscn" id="2_elcdo"]
 [ext_resource type="PackedScene" uid="uid://c5wjiorthgmaa" path="res://scenes/debug/debug_node.tscn" id="3_ce1uw"]
-[ext_resource type="Script" uid="uid://cu4mv6mr3x2hf" path="res://scripts/map/Eartr.cs" id="3_lwbun"]
 [ext_resource type="PackedScene" uid="uid://b8dybuts3lcpm" path="res://scenes/mapEditorGenerics/grass.tscn" id="5_idmyr"]
 [ext_resource type="PackedScene" uid="uid://c36l0w7li2qqb" path="res://scenes/units/no_bash.tscn" id="6_xltkm"]
 [ext_resource type="PackedScene" uid="uid://brxhycisbw0b7" path="res://scenes/units/shemitir.tscn" id="8_aewf8"]
 [ext_resource type="PackedScene" uid="uid://cra0tfrhgbw5w" path="res://scenes/units/oxxxy_miron.tscn" id="8_ttkqu"]
 [ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="10_lwbun"]
+[ext_resource type="PackedScene" uid="uid://bm05nft7586sa" path="res://scenes/units/ot_chertl.tscn" id="11_ecttr"]
+[ext_resource type="Shader" uid="uid://c4evbidh3jf6c" path="res://scenes/maps/earth.gdshader" id="12_xvi8g"]
+[ext_resource type="Texture2D" uid="uid://ch7nnlrt2xx38" path="res://assets/world/zemlya.png" id="13_yr6hx"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_j868g"]
+shader = ExtResource("12_xvi8g")
+shader_parameter/scale = Vector2(0.3, 0.3)
+shader_parameter/grid_scale = 1.0
+shader_parameter/blend_power = 3.000000095
 
 [sub_resource type="Environment" id="Environment_ttkqu"]
 background_mode = 3
@@ -22,8 +29,14 @@ fog_light_color = Color(0.34585017, 0.37055585, 0.40898696, 1)
 [node name="map" type="Node2D" unique_id=2134827611]
 script = ExtResource("1_1gdup")
 
-[node name="TileMapLayer" parent="." unique_id=1812348943 instance=ExtResource("2_elcdo")]
-script = ExtResource("3_lwbun")
+[node name="Zemlya" type="Sprite2D" parent="." unique_id=1614517494]
+z_index = -256
+texture_filter = 3
+texture_repeat = 2
+material = SubResource("ShaderMaterial_j868g")
+position = Vector2(1473, -219)
+scale = Vector2(12.511718, 7.2988276)
+texture = ExtResource("13_yr6hx")
 
 [node name="Alitar" parent="." unique_id=919433776 instance=ExtResource("2_ce1uw")]
 position = Vector2(871, 277)
@@ -52,4 +65,7 @@ environment = SubResource("Environment_ttkqu")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=2142429350]
 position = Vector2(-290, 111)
-color = Color(0.12386721, 0.07375953, 0.14176145, 1)
+color = Color(0.6636223, 0.57027996, 0.7072902, 1)
+
+[node name="OtChertl" parent="." unique_id=1957874477 instance=ExtResource("11_ecttr")]
+position = Vector2(226.56601, 468.932)

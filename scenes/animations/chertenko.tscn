@@ -1,0 +1,301 @@
+[gd_scene format=3 uid="uid://cth1najyn4j5m"]
+
+[ext_resource type="Texture2D" uid="uid://c2stvljqv1408" path="res://assets/unitas/chertenko.png" id="1_7vr4a"]
+[ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="2_b6mov"]
+
+[sub_resource type="Animation" id="Animation_b6mov"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chertenko/legl:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chertenko/legr:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chertenko/legl2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Chertenko/legr2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Chertenko/head/head2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Chertenko/head/head3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Chertenko/wingl:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.31415927]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Chertenko/wingr:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.31415927]
+}
+
+[sub_resource type="Animation" id="Animation_soue1"]
+resource_name = "move"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chertenko/legl:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.4363323129985824, 0.0, -0.4363323129985824]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chertenko/legr:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.4363323129985824, 0.0, 0.4363323129985824]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Chertenko/legl2:rotation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, -0.4363323129985824, 0.0, 0.4363323129985824]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Chertenko/legr2:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [0.0, 0.4363323129985824, 0.0, -0.4363323129985824]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Chertenko/head/head2:rotation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -0.2792526803190927]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Chertenko/head/head3:rotation")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 0.2792526803190927]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Chertenko/wingl:rotation")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1.0000008, 1, 1),
+"update": 0,
+"values": [-0.2617993877991494, -0.3141592653589793, -0.3665191429188092, -0.3141592653589793]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Chertenko/wingr:rotation")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 0.5, 1, 1.5),
+"transitions": PackedFloat32Array(1, 1.0000008, 1, 1),
+"update": 0,
+"values": [0.2617993877991494, 0.3141592653589793, 0.3665191429188092, 0.3141592653589793]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7tfm2"]
+_data = {
+&"RESET": SubResource("Animation_b6mov"),
+&"move": SubResource("Animation_soue1")
+}
+
+[node name="Chertenko" type="Node2D" unique_id=1852852833]
+texture_filter = 3
+
+[node name="Chertenko" type="Sprite2D" parent="." unique_id=1970191313]
+texture = ExtResource("1_7vr4a")
+region_enabled = true
+region_rect = Rect2(32, 0, 32, 32)
+
+[node name="legl" type="Sprite2D" parent="Chertenko" unique_id=1414378311]
+position = Vector2(-3, 0)
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_7vr4a")
+offset = Vector2(-8, 2)
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="legr" type="Sprite2D" parent="Chertenko" unique_id=637281651]
+position = Vector2(3, 0)
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_7vr4a")
+offset = Vector2(8, 2)
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+
+[node name="legl2" type="Sprite2D" parent="Chertenko" unique_id=1755772021]
+position = Vector2(-4, 5)
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_7vr4a")
+offset = Vector2(-8, 2)
+region_enabled = true
+region_rect = Rect2(32, 32, 16, 16)
+
+[node name="legr2" type="Sprite2D" parent="Chertenko" unique_id=1959268856]
+position = Vector2(4, 5)
+scale = Vector2(1, 1.5)
+texture = ExtResource("1_7vr4a")
+offset = Vector2(8, 2)
+region_enabled = true
+region_rect = Rect2(48, 32, 16, 16)
+
+[node name="head" type="Sprite2D" parent="Chertenko" unique_id=1866798475]
+position = Vector2(0, -17)
+texture = ExtResource("1_7vr4a")
+region_enabled = true
+region_rect = Rect2(0, 32, 16, 16)
+
+[node name="head2" type="Sprite2D" parent="Chertenko/head" unique_id=1610033447]
+texture = ExtResource("1_7vr4a")
+offset = Vector2(-3, -6)
+region_enabled = true
+region_rect = Rect2(2, 51, 6, 11)
+
+[node name="head3" type="Sprite2D" parent="Chertenko/head" unique_id=300167877]
+texture = ExtResource("1_7vr4a")
+offset = Vector2(3, -6)
+region_enabled = true
+region_rect = Rect2(8, 51, 6, 11)
+
+[node name="wingl" type="Sprite2D" parent="Chertenko" unique_id=250516140]
+modulate = Color(0.73810095, 0.73810095, 0.73810095, 1)
+position = Vector2(0, -14)
+rotation = -0.31415927
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_7vr4a")
+offset = Vector2(-8, 10)
+region_enabled = true
+region_rect = Rect2(0, 0, 16, 20)
+
+[node name="wingr" type="Sprite2D" parent="Chertenko" unique_id=453094797]
+modulate = Color(0.73810095, 0.73810095, 0.73810095, 1)
+position = Vector2(0, -14)
+rotation = 0.31415927
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_7vr4a")
+offset = Vector2(8, 10)
+region_enabled = true
+region_rect = Rect2(16, 0, 16, 20)
+
+[node name="PointLight2D" type="PointLight2D" parent="Chertenko" unique_id=1225490704]
+position = Vector2(0, 16)
+energy = 0.8
+blend_mode = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.4862745)
+texture = ExtResource("2_b6mov")
+texture_scale = 0.3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1284139376]
+libraries/ = SubResource("AnimationLibrary_7tfm2")
+speed_scale = 4.0

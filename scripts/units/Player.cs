@@ -28,11 +28,6 @@ public partial class Player : Unit
 		_cardPicker = GetNode<CardPicker>("Monitor/CardPicker");
 		
 		XpAddModifier = Stats.XpGainMultiplier;
-		left.ScaleAmountMin = Scale.X / 2;
-		right.ScaleAmountMin = Scale.X / 2;
-		left.ScaleAmountMax = Scale.X;
-		right.ScaleAmountMax = Scale.X;
-		
 	}
 
 

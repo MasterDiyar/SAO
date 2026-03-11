@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cjdq621uphmhf" path="res://scripts/UI/PlayerUI.cs" id="1_lvuxt"]
 [ext_resource type="PackedScene" uid="uid://b4auofnd1mc07" path="res://scenes/cards/card_picker.tscn" id="2_iv2e0"]
+[ext_resource type="Script" uid="uid://clm78ebuda4a0" path="res://scripts/UI/Twenty.cs" id="3_nyct8"]
 
 [node name="Monitor" type="CanvasLayer" unique_id=1822647779]
 script = ExtResource("1_lvuxt")
@@ -34,3 +35,16 @@ offset_left = -136.0
 offset_right = 159.0
 offset_bottom = 27.0
 grow_horizontal = 2
+
+[node name="Label" type="Label" parent="Control" unique_id=2013679403]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 28.0
+offset_right = 20.0
+offset_bottom = 51.0
+grow_horizontal = 2
+text = "20:00"
+script = ExtResource("3_nyct8")

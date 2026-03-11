@@ -3,28 +3,32 @@
 [ext_resource type="Texture2D" uid="uid://cxgfq7qqy5l30" path="res://assets/unitas/whure.png" id="1_u3qdw"]
 
 [sub_resource type="Curve" id="Curve_jq4vv"]
-_limits = [0.0, 3.0, 0.0, 0.99707174]
-_data = [Vector2(0, 3), 0.0, 0.0, 0, 0, Vector2(0.99707174, 0.9775281), 4.5071316, 0.0, 0, 0]
-point_count = 2
+_limits = [0.0, 8.0, 0.0, 2.0]
+_data = [Vector2(0, 0.98876476), 0.0, 0.0, 0, 0, Vector2(0.58536583, 0.4494381), 1.3401427, 1.3401427, 0, 0, Vector2(1.9918697, 6.2022476), -2.932585, 0.0, 0, 0]
+point_count = 3
 
 [sub_resource type="Gradient" id="Gradient_vbnjj"]
-offsets = PackedFloat32Array(0, 0.102564104, 0.28846154, 0.82051283, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0.972549, 0.9490196, 0, 1, 1, 0.54509807, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1)
+offsets = PackedFloat32Array(0, 0.102564104, 0.28846154, 0.4090909, 0.6090909, 1)
+colors = PackedColorArray(3.2473497, 3.2473497, 3.2473497, 1, 1.4622483, 1.4383179, 0, 1, 1.2990143, 0.7214727, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0.08466124, 0.08466124, 0.08466124, 1)
 
 [node name="fireHot" type="CPUParticles2D" unique_id=915686076]
 modulate = Color(1.563596, 1.563596, 1.563596, 1)
 texture_filter = 3
-amount = 25
+amount = 50
 texture = ExtResource("1_u3qdw")
+lifetime = 3.0
 direction = Vector2(10, 0)
 spread = 20.0
 gravity = Vector2(0, 0)
-initial_velocity_min = 30.0
-initial_velocity_max = 90.0
+initial_velocity_min = 15.0
+initial_velocity_max = 60.0
+linear_accel_min = -10.0
+linear_accel_max = 10.0
 radial_accel_min = 3.92
 radial_accel_max = 9.8
 angle_max = 180.0
 scale_amount_min = 0.5
+scale_amount_max = 4.0
 scale_amount_curve = SubResource("Curve_jq4vv")
 color_ramp = SubResource("Gradient_vbnjj")
 hue_variation_max = 1.0

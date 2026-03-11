@@ -8,9 +8,14 @@ public partial class AiBehavior : Node2D
 {
 	[Export] public int Escalation = 0;
 	[Export] public bool CanWalk = false;
+	[Export] float StopDistance = 20f;
 	private Player player;
 	private Unit parent;
 	public int NowB = 0;
+
+	private Texture2D plus = GD.Load<Texture2D>("res://assets/unitas/plus.png");
+
+	private CpuParticles2D cp2d;
 	
 	RandomNumberGenerator rng = new RandomNumberGenerator();
 	
@@ -19,7 +24,10 @@ public partial class AiBehavior : Node2D
 	public override void _Ready()
 	{
 		parent = GetParent<Unit>();
+		cp2d = parent.GetNode<CpuParticles2D>("CPUParticles2D");
+		
 		rng.Randomize();
+		
 		timer = new Timer();
 		AddChild(timer);
 		timer.WaitTime = 1.0f;
@@ -27,7 +35,9 @@ public partial class AiBehavior : Node2D
 		timer.Autostart = true;
 		timer.Timeout += GetBehavior;
 		timer.Start();
-		SetProcess(false);
+		
+		SetProcess(CanWalk);
+		
 		player = GetTree().GetFirstNodeInGroup("player") as Player;
 
 		if (WeaponCheck())
@@ -47,11 +57,21 @@ public partial class AiBehavior : Node2D
 				SetProcess(false);
 				break;
 			case 2:
+				var stats = parent.Stats;
+				float maxArmor = stats.Armor * stats.ArmorMultiplier;
+
+				if (parent.CurrentArmor < maxArmor) {
+					float healAmount = stats.Strength + stats.StrengthMultiplier;
+        
+					parent.CurrentArmor = Mathf.Min(parent.CurrentArmor + healAmount, maxArmor);
+
+					cp2d.Texture = plus;
+					cp2d.Emitting = true;
+				}
 				return;
 		}
 		
-		if (!IsInstanceValid(player))
-		{
+		if (!IsInstanceValid(player)) {
 			QueueFree();
 			return;
 		}
@@ -59,7 +79,6 @@ public partial class AiBehavior : Node2D
 		if (player.GlobalPosition.DistanceSquaredTo(GlobalPosition) <= 40000 + Escalation * Escalation * 2500) {
 			foreach (var weapon in weapons)
 				weapon.RequestAttack(( player.GlobalPosition - GlobalPosition).Angle());
-			
 		}
 	}
 
@@ -78,6 +97,16 @@ public partial class AiBehavior : Node2D
 	
 	public  override void _Process(double delta)
 	{
-		Position += (float)delta * (player.GlobalPosition - GlobalPosition).Normalized() * parent.Stats.Speed;
+		if (!IsInstanceValid(player)) {
+			SetProcess(false);
+			return;
+		}
+		float distSq = player.GlobalPosition.DistanceSquaredTo(GlobalPosition);
+
+		if (!(distSq > StopDistance * StopDistance)) return;
+		
+		Vector2 direction = (player.GlobalPosition - GlobalPosition).Normalized();
+		parent.LookAt(player.GetGlobalPosition());
+		parent.Position += direction * parent.Stats.Speed * (float)delta;
 	}
 }

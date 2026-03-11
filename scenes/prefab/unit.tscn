@@ -1,9 +1,26 @@
 [gd_scene format=3 uid="uid://w17tw3ie6byi"]
 
 [ext_resource type="Script" uid="uid://cq3qiw0qnjv4p" path="res://scripts/units/Unit.cs" id="1_qgilm"]
+[ext_resource type="Texture2D" uid="uid://dtkke1c3h00aw" path="res://assets/unitas/plus.png" id="2_bqugq"]
 
 [node name="Unit" type="CharacterBody2D" unique_id=919433776]
 texture_filter = 3
 script = ExtResource("1_qgilm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1832925106]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="." unique_id=369498097]
+emitting = false
+texture = ExtResource("2_bqugq")
+one_shot = true
+explosiveness = 1.0
+emission_shape = 1
+emission_sphere_radius = 10.0
+direction = Vector2(0.3, -1)
+gravity = Vector2(0, 0)
+initial_velocity_min = 50.0
+initial_velocity_max = 150.0
+linear_accel_min = -45.0
+linear_accel_max = -12.0
+scale_amount_min = 0.8
+scale_amount_max = 1.5

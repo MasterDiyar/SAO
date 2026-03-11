@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://bhlh271yyw72j" path="res://assets/unitas/Mercator.png" id="3_62mb2"]
 [ext_resource type="PackedScene" uid="uid://bm6axyrtuav5s" path="res://scenes/player/monitor.tscn" id="5_pulrj"]
 [ext_resource type="PackedScene" uid="uid://cfob02e07h2jw" path="res://scenes/weapons/red_room.tscn" id="6_bejcv"]
+[ext_resource type="PackedScene" uid="uid://d175emtkrq3e8" path="res://scenes/player/camera_2d.tscn" id="7_bejcv"]
 
 [sub_resource type="Resource" id="Resource_pulrj"]
 script = ExtResource("2_62mb2")
@@ -35,20 +36,16 @@ Stats = SubResource("Resource_pulrj")
 texture = ExtResource("3_62mb2")
 
 [node name="right" parent="Mercator" unique_id=915686076 instance=ExtResource("2_t4o4k")]
+show_behind_parent = true
 position = Vector2(21.679405, 16.549603)
-rotation = 1.0471976
+rotation = 1.3962634
 spread = 15.0
-initial_velocity_min = 60.0
-initial_velocity_max = 120.0
 
 [node name="left" parent="Mercator" unique_id=1453703827 instance=ExtResource("2_t4o4k")]
+show_behind_parent = true
 position = Vector2(-14, 16)
-rotation = 2.0943952
+rotation = 1.7453293
 spread = 15.0
-initial_velocity_min = 60.0
-initial_velocity_max = 120.0
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1704082018]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1297516736]
 position = Vector2(4, -3)
@@ -64,3 +61,7 @@ position = Vector2(19, 11)
 [node name="RedRoom" parent="." unique_id=1496135998 instance=ExtResource("6_bejcv")]
 modulate = Color(1.0384669, 1.0384669, 1.0384669, 1)
 position = Vector2(-10, 10)
+
+[node name="Camera2D" parent="." unique_id=44282447 instance=ExtResource("7_bejcv")]
+EdgeMargin = 100.0
+MaxOffset = 100.0

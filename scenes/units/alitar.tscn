@@ -6,10 +6,15 @@
 [ext_resource type="Shader" uid="uid://c3efi14c6va2d" path="res://scenes/units/mobik.gdshader" id="2_lrxlt"]
 [ext_resource type="PackedScene" uid="uid://bvxgtaoyure2r" path="res://scenes/units/ai_behavior.tscn" id="5_lrxlt"]
 [ext_resource type="PackedScene" uid="uid://daphdgilty5ru" path="res://scenes/weapons/lidar_bazer.tscn" id="6_qjo6s"]
+[ext_resource type="PackedScene" uid="uid://bjpdwkye0oo1d" path="res://scenes/prefab/NodeSpawner.tscn" id="7_4d6na"]
+[ext_resource type="PackedScene" uid="uid://dgvovfjkstgkr" path="res://scenes/units/altair.tscn" id="8_10esf"]
 
 [sub_resource type="Resource" id="Resource_lrxlt"]
 script = ExtResource("2_6hrwv")
-Hp = 100.0
+Hp = 116.0
+Strength = 18.0
+KritMultiplier = 5.0
+KritChance = 5.0
 metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0n71"]
@@ -37,3 +42,7 @@ region_rect = Rect2(60, 22, 32, 64)
 Escalation = 1
 
 [node name="LidarBazer" parent="." index="3" unique_id=1166905945 instance=ExtResource("6_qjo6s")]
+
+[node name="Timer" parent="." index="5" unique_id=415249626 instance=ExtResource("7_4d6na")]
+wait_time = 80.0
+toWhom = ExtResource("8_10esf")

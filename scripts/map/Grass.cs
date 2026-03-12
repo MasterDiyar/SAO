@@ -16,6 +16,7 @@ public partial class Grass : Node2D
 	{
 		map = GetParent<Map>();
 		map.PlayerFoundInvoker += (_player) => { player = _player; AssignPlayer(); };
+		Visible = true;
 	}
 
 }

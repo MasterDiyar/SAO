@@ -3,4 +3,9 @@
 [ext_resource type="Script" uid="uid://bm6kn6xu8p8lg" path="res://scripts/UI/PlayerCam.cs" id="1_kpwl0"]
 
 [node name="Camera2D" type="Camera2D" unique_id=44282447]
+limit_left = -125
+limit_top = -1125
+limit_right = 3125
+limit_bottom = 715
+editor_draw_limits = true
 script = ExtResource("1_kpwl0")

@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://dgvovfjkstgkr"]
+
+[ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_0g8rb"]
+[ext_resource type="Texture2D" uid="uid://cqt116qjm4tda" path="res://assets/unitas/bash_graded.png" id="2_cp5q0"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_tnirb"]
+[ext_resource type="Shader" uid="uid://c3efi14c6va2d" path="res://scenes/units/mobik.gdshader" id="3_tnirb"]
+[ext_resource type="PackedScene" uid="uid://bvxgtaoyure2r" path="res://scenes/units/ai_behavior.tscn" id="5_k4bhd"]
+[ext_resource type="PackedScene" uid="uid://dlxl84y2o5p0w" path="res://scenes/weapons/lidar_round.tscn" id="6_r0ea6"]
+
+[sub_resource type="Resource" id="Resource_k4bhd"]
+script = ExtResource("2_tnirb")
+Hp = 220.0
+Strength = 32.0
+Armor = 40.0
+KritMultiplier = 10.0
+KritChance = 10.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tnirb"]
+size = Vector2(20, 68)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_k4bhd"]
+shader = ExtResource("3_tnirb")
+shader_parameter/speed = 2.0
+shader_parameter/amplitude = 20.0
+
+[node name="Altair" unique_id=919433776 instance=ExtResource("1_0g8rb")]
+Stats = SubResource("Resource_k4bhd")
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
+position = Vector2(2, -30)
+shape = SubResource("RectangleShape2D_tnirb")
+
+[node name="BashGraded" type="Sprite2D" parent="." index="2" unique_id=1514851692]
+material = SubResource("ShaderMaterial_k4bhd")
+position = Vector2(0, -29)
+texture = ExtResource("2_cp5q0")
+region_enabled = true
+region_rect = Rect2(57.714375, 18.700987, 44.314655, 73.10458)
+
+[node name="aiBehavior" parent="." index="3" unique_id=1348726942 instance=ExtResource("5_k4bhd")]
+Escalation = 7
+
+[node name="LidarRound" parent="." index="4" unique_id=1166905945 instance=ExtResource("6_r0ea6")]

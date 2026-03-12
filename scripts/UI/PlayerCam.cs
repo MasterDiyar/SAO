@@ -16,20 +16,20 @@ public partial class PlayerCam : Camera2D
         float targetOffsetY = 0.0f;
 
         if (mousePos.X < EdgeMargin) {
-            float intensity = 1.0f - (mousePos.X / EdgeMargin);
+            float intensity = 1.0f - Mathf.Clamp(mousePos.X / EdgeMargin, 0.0f, 1.0f);
             targetOffsetX = -MaxOffset * intensity; 
         }
         else if (mousePos.X > viewportSize.X - EdgeMargin) {
             float distanceToEdge = viewportSize.X - mousePos.X;
-            float intensity = 1.0f - (distanceToEdge / EdgeMargin);
+            float intensity = 1.0f - Mathf.Clamp((distanceToEdge / EdgeMargin),0.0f,  1.0f);
             targetOffsetX = MaxOffset * intensity;
         }
         if (mousePos.Y < EdgeMargin) {
-            float intensity = 1.0f - (mousePos.Y / EdgeMargin);
+            float intensity = 1.0f - Mathf.Clamp(mousePos.Y / EdgeMargin, 0, 1);
             targetOffsetY = -MaxOffset * intensity;
         }else if (mousePos.Y > viewportSize.Y - EdgeMargin) {
             float distanceToEdge = viewportSize.Y - mousePos.Y;
-            float intensity = 1.0f - (distanceToEdge / EdgeMargin);
+            float intensity = Mathf.Clamp(1.0f - (distanceToEdge / EdgeMargin),0.0f,  1.0f);
             targetOffsetY = MaxOffset * intensity;
         }
 

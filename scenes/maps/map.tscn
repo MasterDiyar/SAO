@@ -34,8 +34,8 @@ z_index = -256
 texture_filter = 3
 texture_repeat = 2
 material = SubResource("ShaderMaterial_j868g")
-position = Vector2(1473, -219)
-scale = Vector2(12.511718, 7.2988276)
+position = Vector2(1500.0001, -204.50003)
+scale = Vector2(12.695313, 7.1835938)
 texture = ExtResource("13_yr6hx")
 
 [node name="Alitar" parent="." unique_id=919433776 instance=ExtResource("2_ce1uw")]
@@ -44,6 +44,7 @@ position = Vector2(871, 277)
 [node name="DebugNode" parent="." unique_id=1118553164 instance=ExtResource("3_ce1uw")]
 
 [node name="Grass" parent="." unique_id=2010142176 instance=ExtResource("5_idmyr")]
+visible = false
 position = Vector2(-106, 750)
 scale = Vector2(4, -4)
 

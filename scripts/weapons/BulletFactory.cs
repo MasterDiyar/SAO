@@ -13,6 +13,10 @@ public partial class BulletFactory : Node2D
     [Export] public float BulletScale  = 1; 
     [Export] public float Offset       = 0;
     [Export] public float AngleOffset  = 0;
+    
+    [ExportGroup("Extras")]
+    [Export] private float randomAngleModifier = 0;
+    [Export] private float randomSpeedModifier = 0;
 
     public virtual List<Bullet> CreateBullets(Vector2 originPosition, float baseAngle)
     {
@@ -25,8 +29,12 @@ public partial class BulletFactory : Node2D
             if (BulletScene == null) continue;
 
             Bullet bt = BulletScene.Instantiate<Bullet>();
-
-            bt.Rotation = AngleOffset + angle + BetweenAngle * i; 
+            
+            var randomAngle = (GD.Randf() - 0.5f) * 2 * randomAngleModifier;
+            var randomSpeed = (GD.Randf() - 0.5f) * 2 * randomSpeedModifier;
+            
+            bt.Speed += randomSpeed;
+            bt.Rotation = AngleOffset + angle + BetweenAngle * i + randomAngle; 
             bt.GlobalPosition = originPosition + Vector2.FromAngle(angle+ BetweenAngle * i) * Offset;
             bt.GlobalScale *= BulletScale;
 

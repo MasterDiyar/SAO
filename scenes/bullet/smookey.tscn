@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://82jf0d6b04ld"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_0ct27"]
+[ext_resource type="Script" uid="uid://b3fo4k4344xdl" path="res://scripts/bullets/Smookey.cs" id="2_b7y3f"]
+[ext_resource type="Texture2D" uid="uid://2l6amu343iqu" path="res://assets/unitas/spores/Spores1.png" id="3_4dbec"]
+[ext_resource type="Texture2D" uid="uid://cea4ivsfpeg3s" path="res://assets/unitas/spores/Spores2.png" id="4_ikugy"]
+[ext_resource type="Texture2D" uid="uid://bghgwla5p74li" path="res://assets/unitas/spores/Spores3.png" id="5_oebkk"]
+[ext_resource type="Texture2D" uid="uid://dp2me1243rtgl" path="res://assets/unitas/spores/Spores4.png" id="6_cyu13"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_foli5"]
+radius = 116.1895
+
+[node name="Smookey" unique_id=1728971169 node_paths=PackedStringArray("Spores") instance=ExtResource("1_0ct27")]
+position = Vector2(547.83057, 211.84082)
+script = ExtResource("2_b7y3f")
+Spores = [NodePath("Spores1"), NodePath("Spores2"), NodePath("Spores3"), NodePath("Spores4")]
+Damage = 15.0
+Speed = 0.0
+LifeTime = 12.0
+OnTouchConsume = 0.3
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("CircleShape2D_foli5")
+
+[node name="Spores1" type="Sprite2D" parent="." index="1" unique_id=970008641]
+texture = ExtResource("3_4dbec")
+
+[node name="Spores2" type="Sprite2D" parent="." index="2" unique_id=1674739860]
+texture = ExtResource("4_ikugy")
+
+[node name="Spores3" type="Sprite2D" parent="." index="3" unique_id=1497923319]
+texture = ExtResource("5_oebkk")
+
+[node name="Spores4" type="Sprite2D" parent="." index="4" unique_id=822960379]
+texture = ExtResource("6_cyu13")

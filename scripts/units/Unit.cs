@@ -40,8 +40,11 @@ public partial class Unit : CharacterBody2D
 			DefferedDie();
 	}
 
-	public void DefferedDie()
+	public virtual void DefferedDie()
 	{
+		var pl = GetTree().GetFirstNodeInGroup("player") as Player;
+		if (pl != null && IsInstanceValid(pl))
+			pl.AddXp(Stats.Hp);
 		CallDeferred("queue_free");
 	}
 }

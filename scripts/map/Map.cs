@@ -7,7 +7,9 @@ public partial class Map : Node2D
 	public Action<Player> PlayerFoundInvoker;
 	public override void _Ready()
 	{
-		player = GetNodeOrNull<Player>("Player");
+		foreach (Node child in GetChildren())
+			if (child is Player child1)
+				player = child1;
 		if (player != null)
 			PlayerFoundInvoker?.Invoke(player);
 		

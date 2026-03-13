@@ -12,6 +12,7 @@ public partial class UnitResource : Resource
     [Export] public float Intellegence = 0;
     [Export] public float KritMultiplier = 0;
     [Export] public float KritChance = 0;
+    [Export] public float Xp = 0;
     
     [ExportGroup("Stat Multipliers")]
     [Export] public float HpMultiplier = 1.0f;

@@ -95,4 +95,9 @@ public partial class Player : Unit
 		}
 	}
 	#endregion
+
+	public override void DefferedDie()
+	{
+		CallDeferred("queue_free");
+	}
 }

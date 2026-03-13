@@ -15,6 +15,7 @@ Hp = 116.0
 Strength = 18.0
 KritMultiplier = 5.0
 KritChance = 5.0
+Xp = 35.0
 metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a0n71"]

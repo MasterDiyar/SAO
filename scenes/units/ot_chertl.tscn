@@ -11,6 +11,7 @@ Hp = 40.0
 Strength = 40.0
 Speed = 32.0
 Armor = 320.0
+Xp = 100.0
 metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_difrx"]

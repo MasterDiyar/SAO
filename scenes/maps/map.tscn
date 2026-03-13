@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cra0tfrhgbw5w" path="res://scenes/units/oxxxy_miron.tscn" id="8_ttkqu"]
 [ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="10_lwbun"]
 [ext_resource type="PackedScene" uid="uid://bm05nft7586sa" path="res://scenes/units/ot_chertl.tscn" id="11_ecttr"]
+[ext_resource type="PackedScene" uid="uid://b7jthwcha63el" path="res://scenes/mapEditorGenerics/shettle.tscn" id="12_bb6qu"]
 [ext_resource type="Shader" uid="uid://c4evbidh3jf6c" path="res://scenes/maps/earth.gdshader" id="12_xvi8g"]
 [ext_resource type="Texture2D" uid="uid://ch7nnlrt2xx38" path="res://assets/world/zemlya.png" id="13_yr6hx"]
 
@@ -27,6 +28,7 @@ fog_enabled = true
 fog_light_color = Color(0.34585017, 0.37055585, 0.40898696, 1)
 
 [node name="map" type="Node2D" unique_id=2134827611]
+y_sort_enabled = true
 script = ExtResource("1_1gdup")
 
 [node name="Zemlya" type="Sprite2D" parent="." unique_id=1614517494]
@@ -47,6 +49,7 @@ position = Vector2(871, 277)
 visible = false
 position = Vector2(-106, 750)
 scale = Vector2(4, -4)
+NoSpawnRects = Array[Rect2]([Rect2(70, 200, 112.5, 78)])
 
 [node name="noBash" parent="." unique_id=1911781026 instance=ExtResource("6_xltkm")]
 position = Vector2(102.7272, 384.9578)
@@ -55,6 +58,7 @@ position = Vector2(102.7272, 384.9578)
 position = Vector2(429, 115)
 
 [node name="Shemitir" parent="." unique_id=296776465 instance=ExtResource("8_aewf8")]
+y_sort_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="Shemitir" unique_id=110634299]
 energy = 1.44
@@ -70,3 +74,6 @@ color = Color(0.6636223, 0.57027996, 0.7072902, 1)
 
 [node name="OtChertl" parent="." unique_id=1957874477 instance=ExtResource("11_ecttr")]
 position = Vector2(226.56601, 468.932)
+
+[node name="Shettle" parent="." unique_id=2105356531 instance=ExtResource("12_bb6qu")]
+position = Vector2(395, -200)

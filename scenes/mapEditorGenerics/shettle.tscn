@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b7jthwcha63el"]
+
+[ext_resource type="Texture2D" uid="uid://6oiejoxa07cg" path="res://assets/world/shuttle_devtex.png" id="1_a2u57"]
+[ext_resource type="Script" uid="uid://b7d4q5p1k7rh6" path="res://scripts/map/Shettle.cs" id="1_omoj2"]
+[ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="2_omoj2"]
+
+[node name="Shettle" type="StaticBody2D" unique_id=2105356531 node_paths=PackedStringArray("blink", "energyfall", "blinkLight", "energyfallLight")]
+script = ExtResource("1_omoj2")
+blink = NodePath("shortping")
+energyfall = NodePath("energyJump")
+blinkLight = NodePath("PointLight2D")
+energyfallLight = NodePath("PointLight2D2")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1991561484]
+position = Vector2(-395, 200)
+polygon = PackedVector2Array(627, -87, 259, -89, 227, -117, 199, -134, 203, -186, 170, -200, 210, -229, 225, -290, 225, -321, 615, -322, 626, -303)
+
+[node name="ShuttleDevtex" type="Sprite2D" parent="." unique_id=548350195]
+y_sort_enabled = true
+texture_filter = 3
+texture = ExtResource("1_a2u57")
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1576359479]
+position = Vector2(169, 143)
+energy = 0.31
+texture = ExtResource("2_omoj2")
+texture_scale = 3.85
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=19425670]
+position = Vector2(169, 143)
+blend_mode = 2
+texture = ExtResource("2_omoj2")
+texture_scale = 0.6
+
+[node name="shortping" type="Timer" parent="." unique_id=1699370384]
+wait_time = 0.3
+
+[node name="energyJump" type="Timer" parent="." unique_id=1026729094]
+wait_time = 20.0

@@ -14,6 +14,7 @@ Strength = 32.0
 Armor = 40.0
 KritMultiplier = 10.0
 KritChance = 10.0
+Xp = 80.0
 metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tnirb"]

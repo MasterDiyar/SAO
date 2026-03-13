@@ -35,11 +35,20 @@ public partial class Bullet : Area2D
 
     public override void _Process(double delta) //for angulra speed = a = wR
     {
-        float dl = (float) delta;
-        LifeTime -= dl;
+        Alivement((float)delta);
+        Movement((float)delta);
+    }
+
+    public virtual void Alivement(float dt)
+    {
+        LifeTime -= dt;
         if (LifeTime <= 0) InvokeDie();
+    }
+
+    public virtual void Movement(float dl)
+    {
         Rotation += AngularVelocity * dl;
-        Position += Speed * dl * Vector2.FromAngle(Rotation);
+                Position += Speed * dl * Vector2.FromAngle(Rotation);
     }
     
     private bool _isDead = false;

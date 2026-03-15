@@ -19,6 +19,8 @@ public partial class AiBehavior : Node2D
 	
 	RandomNumberGenerator rng = new RandomNumberGenerator();
 	
+	[Signal] public delegate void ChangeBehaviorEventHandler(int behavior); //0-walk 1-aggressive 2-idling
+	
 	List<WeaponTrigger> weapons = [];
 	Timer timer;
 	public override void _Ready()
@@ -39,6 +41,7 @@ public partial class AiBehavior : Node2D
 		SetProcess(CanWalk);
 		
 		player = GetTree().GetFirstNodeInGroup("player") as Player;
+		
 
 		if (WeaponCheck())
 			GD.Print("Alles is gut aib loaded correctly.");
@@ -77,6 +80,7 @@ public partial class AiBehavior : Node2D
 		}
 		
 		if (player.GlobalPosition.DistanceSquaredTo(GlobalPosition) <= 40000 + Escalation * Escalation * 2500) {
+			
 			foreach (var weapon in weapons)
 				weapon.RequestAttack(( player.GlobalPosition - GlobalPosition).Angle());
 		}

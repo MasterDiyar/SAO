@@ -30,6 +30,7 @@ player=""
 trigger=""
 weapon=""
 foto=""
+anim=""
 
 [input]
 

@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://d0isfqwno2obf"]
+
+[ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_lx4f4"]
+[ext_resource type="PackedScene" uid="uid://bacam7q8youi" path="res://scenes/animations/temich.tscn" id="2_6gaqn"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra2sq"]
+height = 69.035614
+
+[node name="Unit" unique_id=919433776 instance=ExtResource("1_lx4f4")]
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
+rotation = -0.89709926
+shape = SubResource("CapsuleShape2D_ra2sq")
+
+[node name="Temich" parent="." index="2" unique_id=1401005910 instance=ExtResource("2_6gaqn")]

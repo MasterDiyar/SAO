@@ -2,14 +2,36 @@
 
 [ext_resource type="PackedScene" uid="uid://w17tw3ie6byi" path="res://scenes/prefab/unit.tscn" id="1_lx4f4"]
 [ext_resource type="PackedScene" uid="uid://bacam7q8youi" path="res://scenes/animations/temich.tscn" id="2_6gaqn"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_ra2sq"]
+[ext_resource type="PackedScene" uid="uid://buq6mek2du7bx" path="res://scenes/weapons/sword_area.tscn" id="3_6gaqn"]
+[ext_resource type="PackedScene" uid="uid://bvxgtaoyure2r" path="res://scenes/units/ai_behavior.tscn" id="5_aiioi"]
+
+[sub_resource type="Resource" id="Resource_aiioi"]
+script = ExtResource("2_ra2sq")
+Hp = 200.0
+Strength = 60.0
+Speed = 60.0
+Armor = 600.0
+Xp = 300.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ra2sq"]
-height = 69.035614
+height = 64.963684
 
 [node name="Unit" unique_id=919433776 instance=ExtResource("1_lx4f4")]
+Stats = SubResource("Resource_aiioi")
 
 [node name="CollisionShape2D" parent="." index="0" unique_id=1832925106]
-rotation = -0.89709926
+rotation = 0.87266463
 shape = SubResource("CapsuleShape2D_ra2sq")
 
-[node name="Temich" parent="." index="2" unique_id=1401005910 instance=ExtResource("2_6gaqn")]
+[node name="Temich" parent="." index="2" unique_id=1401005910 node_paths=PackedStringArray("behavior") instance=ExtResource("2_6gaqn")]
+behavior = NodePath("../aiBehavior")
+
+[node name="SwordArea" parent="." index="3" unique_id=664625292 instance=ExtResource("3_6gaqn")]
+nodePath = "../Temich/Node2D/Pike/Area2D"
+
+[node name="aiBehavior" parent="." index="4" unique_id=1348726942 instance=ExtResource("5_aiioi")]
+Escalation = -2
+CanWalk = true
+StopDistance = 50.0

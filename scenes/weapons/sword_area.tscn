@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://buq6mek2du7bx"]
+
+[ext_resource type="Script" uid="uid://codcjcl7t88yt" path="res://scripts/weapons/Swords.cs" id="1_hn8up"]
+[ext_resource type="PackedScene" uid="uid://bmcb8cp3mx5yd" path="res://scenes/weapons/timed_trigger.tscn" id="2_o0mbn"]
+
+[node name="SwordArea" type="Node2D" unique_id=664625292 node_paths=PackedStringArray("Trigger")]
+script = ExtResource("1_hn8up")
+Trigger = NodePath("TimedTrigger")
+
+[node name="TimedTrigger" parent="." unique_id=249865558 instance=ExtResource("2_o0mbn")]

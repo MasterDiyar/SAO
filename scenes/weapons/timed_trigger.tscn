@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bmcb8cp3mx5yd"]
+
+[ext_resource type="Script" uid="uid://qrv4llhna4wn" path="res://scripts/weapons/DelayedWeaponTrigger.cs" id="1_li8dd"]
+
+[node name="TimedTrigger" type="Node" unique_id=249865558]
+script = ExtResource("1_li8dd")

@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bm05nft7586sa" path="res://scenes/units/ot_chertl.tscn" id="11_ecttr"]
 [ext_resource type="PackedScene" uid="uid://b7jthwcha63el" path="res://scenes/mapEditorGenerics/shettle.tscn" id="12_bb6qu"]
 [ext_resource type="Shader" uid="uid://c4evbidh3jf6c" path="res://scenes/maps/earth.gdshader" id="12_xvi8g"]
+[ext_resource type="PackedScene" uid="uid://d0isfqwno2obf" path="res://scenes/units/Artek.tscn" id="13_xvi8g"]
 [ext_resource type="Texture2D" uid="uid://ch7nnlrt2xx38" path="res://assets/world/zemlya.png" id="13_yr6hx"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_j868g"]
@@ -27,6 +28,43 @@ glow_blend_mode = 0
 fog_enabled = true
 fog_light_color = Color(0.34585017, 0.37055585, 0.40898696, 1)
 
+[sub_resource type="Animation" id="Animation_xvi8g"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0.6636223, 0.57027996, 0.7072902, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_yr6hx"]
+resource_name = "zakat"
+length = 1200.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasModulate:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1200),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0.87738824, 0.83453405, 0.897594, 1), Color(0.3906487, 0.30868468, 0.42632005, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_j868g"]
+_data = {
+&"RESET": SubResource("Animation_xvi8g"),
+&"zakat": SubResource("Animation_yr6hx")
+}
+
 [node name="map" type="Node2D" unique_id=2134827611]
 y_sort_enabled = true
 script = ExtResource("1_1gdup")
@@ -36,8 +74,8 @@ z_index = -256
 texture_filter = 3
 texture_repeat = 2
 material = SubResource("ShaderMaterial_j868g")
-position = Vector2(1500.0001, -204.50003)
-scale = Vector2(12.695313, 7.1835938)
+position = Vector2(1361.5001, -108.75004)
+scale = Vector2(13.566406, 7.6386714)
 texture = ExtResource("13_yr6hx")
 
 [node name="Alitar" parent="." unique_id=919433776 instance=ExtResource("2_ce1uw")]
@@ -77,3 +115,9 @@ position = Vector2(226.56601, 468.932)
 
 [node name="Shettle" parent="." unique_id=2105356531 instance=ExtResource("12_bb6qu")]
 position = Vector2(395, -200)
+
+[node name="Unit" parent="." unique_id=1425473832 instance=ExtResource("13_xvi8g")]
+position = Vector2(1173, 31)
+
+[node name="WorldIsGame" type="AnimationPlayer" parent="." unique_id=149035387]
+libraries/ = SubResource("AnimationLibrary_j868g")

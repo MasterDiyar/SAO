@@ -7,10 +7,8 @@ public partial class DelayedWeaponTrigger : WeaponTrigger
 {
     [Export] public float WindupTime = 0.5f; 
 
-    protected override async void ExecuteAttack(float angle)
-    {
-        if (WindupTime <= 0)
-        {
+    protected override async void ExecuteAttack(float angle) {
+        if (WindupTime <= 0) {
             base.ExecuteAttack(angle);
             return;
         }

@@ -25,8 +25,10 @@ position = Vector2(2, 0)
 rotation = 1.5707964
 shape = SubResource("CapsuleShape2D_difrx")
 
-[node name="Chertenko" parent="." index="1" unique_id=1852852833 instance=ExtResource("3_blwhu")]
+[node name="Chertenko" parent="." index="1" unique_id=1852852833 node_paths=PackedStringArray("behavior", "rotateNode") instance=ExtResource("3_blwhu")]
 rotation = 1.5707964
+behavior = NodePath("../aiBehavior")
+rotateNode = NodePath(".")
 
 [node name="aiBehavior" parent="." index="2" unique_id=1348726942 instance=ExtResource("4_difrx")]
 Escalation = -1

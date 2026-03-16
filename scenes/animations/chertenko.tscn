@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://cth1najyn4j5m"]
 
 [ext_resource type="Texture2D" uid="uid://c2stvljqv1408" path="res://assets/unitas/chertenko.png" id="1_7vr4a"]
+[ext_resource type="Script" uid="uid://bos440pq8phye" path="res://scripts/units/AnimationReader.cs" id="1_soue1"]
 [ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="2_b6mov"]
 
 [sub_resource type="Animation" id="Animation_b6mov"]
@@ -103,7 +104,7 @@ tracks/7/keys = {
 }
 
 [sub_resource type="Animation" id="Animation_soue1"]
-resource_name = "move"
+resource_name = "walk"
 length = 2.0
 loop_mode = 1
 tracks/0/type = "value"
@@ -206,11 +207,77 @@ tracks/7/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_7tfm2"]
 _data = {
 &"RESET": SubResource("Animation_b6mov"),
-&"move": SubResource("Animation_soue1")
+&"walk": SubResource("Animation_soue1")
 }
 
-[node name="Chertenko" type="Node2D" unique_id=1852852833]
+[sub_resource type="Animation" id="Animation_7tfm2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chertenko/PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.3]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chertenko/PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.8]
+}
+
+[sub_resource type="Animation" id="Animation_i60vs"]
+resource_name = "blink"
+length = 2.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Chertenko/PointLight2D:texture_scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.3, 0.4]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Chertenko/PointLight2D:energy")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.8, 0.6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m80jt"]
+_data = {
+&"RESET": SubResource("Animation_7tfm2"),
+&"blink": SubResource("Animation_i60vs")
+}
+
+[node name="Chertenko" type="Node2D" unique_id=1852852833 node_paths=PackedStringArray("mainPlayer", "secondaryPlayer", "Armors")]
 texture_filter = 3
+script = ExtResource("1_soue1")
+mainPlayer = NodePath("AnimationPlayer")
+secondaryPlayer = NodePath("AnimationPlayer2")
+Armors = []
 
 [node name="Chertenko" type="Sprite2D" parent="." unique_id=1970191313]
 texture = ExtResource("1_7vr4a")
@@ -288,7 +355,7 @@ region_enabled = true
 region_rect = Rect2(16, 0, 16, 20)
 
 [node name="PointLight2D" type="PointLight2D" parent="Chertenko" unique_id=1225490704]
-position = Vector2(0, 16)
+position = Vector2(1, 17)
 energy = 0.8
 blend_mode = 2
 shadow_enabled = true
@@ -299,3 +366,6 @@ texture_scale = 0.3
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1284139376]
 libraries/ = SubResource("AnimationLibrary_7tfm2")
 speed_scale = 4.0
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=892440553]
+libraries/ = SubResource("AnimationLibrary_m80jt")

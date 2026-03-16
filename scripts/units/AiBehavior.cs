@@ -53,11 +53,14 @@ public partial class AiBehavior : Node2D
 		switch (NowB)
 		{
 			case 0:
-				if (CanWalk)
+				if (CanWalk) {
 					SetProcess(true);
+					EmitSignal(nameof(ChangeBehavior), 0);
+				}
 				break;
 			case 1:
 				SetProcess(false);
+				EmitSignal(nameof(ChangeBehavior), 2);
 				break;
 			case 2:
 				var stats = parent.Stats;
@@ -71,6 +74,7 @@ public partial class AiBehavior : Node2D
 					cp2d.Texture = plus;
 					cp2d.Emitting = true;
 				}
+				EmitSignal(nameof(ChangeBehavior), 3);
 				return;
 		}
 		
@@ -80,7 +84,7 @@ public partial class AiBehavior : Node2D
 		}
 		
 		if (player.GlobalPosition.DistanceSquaredTo(GlobalPosition) <= 40000 + Escalation * Escalation * 2500) {
-			
+			EmitSignal(nameof(ChangeBehavior), 1);
 			foreach (var weapon in weapons)
 				weapon.RequestAttack(( player.GlobalPosition - GlobalPosition).Angle());
 		}

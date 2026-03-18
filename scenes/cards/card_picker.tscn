@@ -5,18 +5,18 @@
 [ext_resource type="Script" uid="uid://byolx5tig536v" path="res://scripts/resources/PickerResource.cs" id="3_7dw1e"]
 [ext_resource type="PackedScene" uid="uid://ckkxbjyfigte0" path="res://scenes/cards/health.tscn" id="4_427an"]
 [ext_resource type="PackedScene" uid="uid://bth5e6hjsxfv2" path="res://scenes/cards/strength.tscn" id="5_h6ps4"]
+[ext_resource type="PackedScene" uid="uid://c5hatcaica20h" path="res://scenes/cards/double_attack.tscn" id="6_7dw1e"]
+[ext_resource type="PackedScene" uid="uid://cg0y5qavg61c6" path="res://scenes/cards/speed_card.tscn" id="7_427an"]
 
 [sub_resource type="Resource" id="Resource_gtih7"]
 script = ExtResource("3_7dw1e")
 pickCard = ExtResource("2_kof48")
-Level = 1
 MaxLevel = 3
 metadata/_custom_type_script = "uid://byolx5tig536v"
 
 [sub_resource type="Resource" id="Resource_c3qdk"]
 script = ExtResource("3_7dw1e")
 pickCard = ExtResource("4_427an")
-Level = 1
 MaxLevel = 5
 Repeatable = true
 metadata/_custom_type_script = "uid://byolx5tig536v"
@@ -24,9 +24,20 @@ metadata/_custom_type_script = "uid://byolx5tig536v"
 [sub_resource type="Resource" id="Resource_14p3e"]
 script = ExtResource("3_7dw1e")
 pickCard = ExtResource("5_h6ps4")
-Level = 1
 MaxLevel = 10
 Repeatable = true
+metadata/_custom_type_script = "uid://byolx5tig536v"
+
+[sub_resource type="Resource" id="Resource_427an"]
+script = ExtResource("3_7dw1e")
+pickCard = ExtResource("6_7dw1e")
+MaxLevel = 1
+metadata/_custom_type_script = "uid://byolx5tig536v"
+
+[sub_resource type="Resource" id="Resource_h6ps4"]
+script = ExtResource("3_7dw1e")
+pickCard = ExtResource("7_427an")
+MaxLevel = 5
 metadata/_custom_type_script = "uid://byolx5tig536v"
 
 [node name="CardPicker" type="Control" unique_id=1931976821 node_paths=PackedStringArray("ExitButton")]
@@ -36,7 +47,7 @@ offset_right = 550.0
 offset_bottom = 323.0
 script = ExtResource("1_o10ky")
 ExitButton = NodePath("Button")
-allCards = Array[Object]([SubResource("Resource_gtih7"), SubResource("Resource_c3qdk"), SubResource("Resource_14p3e")])
+allCards = Array[Object]([SubResource("Resource_gtih7"), SubResource("Resource_c3qdk"), SubResource("Resource_14p3e"), SubResource("Resource_427an"), SubResource("Resource_h6ps4")])
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1642949075]
 layout_mode = 1

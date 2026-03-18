@@ -74,8 +74,8 @@ z_index = -256
 texture_filter = 3
 texture_repeat = 2
 material = SubResource("ShaderMaterial_j868g")
-position = Vector2(1361.5001, -108.75004)
-scale = Vector2(13.566406, 7.6386714)
+position = Vector2(1501.9998, -213.00009)
+scale = Vector2(15.953124, 9.312501)
 texture = ExtResource("13_yr6hx")
 
 [node name="Alitar" parent="." unique_id=919433776 instance=ExtResource("2_ce1uw")]

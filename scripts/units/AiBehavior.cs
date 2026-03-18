@@ -83,7 +83,7 @@ public partial class AiBehavior : Node2D
 			return;
 		}
 		
-		if (player.GlobalPosition.DistanceSquaredTo(GlobalPosition) <= 40000 + Escalation * Escalation * 2500) {
+		if (player.GlobalPosition.DistanceSquaredTo(GlobalPosition) <= float.Pow(200 + 25 * Escalation, 2)) {
 			EmitSignal(nameof(ChangeBehavior), 1);
 			foreach (var weapon in weapons)
 				weapon.RequestAttack(( player.GlobalPosition - GlobalPosition).Angle());

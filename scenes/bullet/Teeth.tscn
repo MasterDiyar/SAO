@@ -1,0 +1,171 @@
+[gd_scene format=3 uid="uid://dlkh1wxcp1e2j"]
+
+[ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_yes0n"]
+[ext_resource type="Texture2D" uid="uid://dsfs2fljuonte" path="res://assets/unitas/Biter.png" id="2_nphbo"]
+[ext_resource type="PackedScene" uid="uid://b537oysyafg3d" path="res://scenes/debug/animation_executer.tscn" id="3_nphbo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_64d1q"]
+
+[sub_resource type="Animation" id="Animation_82ike"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Biter2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -9.536743e-07)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Biter2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.34906584]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Biter:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-10, -1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Biter:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [-0.5235988]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_hy5f4"]
+resource_name = "warik"
+length = 0.46
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Biter2:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.46),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, -9.536743e-07), Vector2(-0.99999976, 3), Vector2(6, -4)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Biter2:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.46),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.34906584, 0.5235988, 0.27750736]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Biter:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.46),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-10, -1), Vector2(-3, -4.000001), Vector2(13, -13)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Biter:rotation")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.46),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [-0.5235988, -0.6981317, 0.41015238]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("CollisionShape2D:position")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.48),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(10, 0), Vector2(28, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_f0uoj"]
+_data = {
+&"RESET": SubResource("Animation_82ike"),
+&"warik": SubResource("Animation_hy5f4")
+}
+
+[node name="Bullet" unique_id=1728971169 instance=ExtResource("1_yes0n")]
+Damage = 30.0
+Speed = 40.0
+LifeTime = 0.46
+OnTouchConsume = 0.0
+
+[node name="CollisionShape2D" parent="." index="0" unique_id=1799808597]
+shape = SubResource("CircleShape2D_64d1q")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="1" unique_id=1117244723]
+libraries/ = SubResource("AnimationLibrary_f0uoj")
+
+[node name="Biter" type="Sprite2D" parent="." index="2" unique_id=1732481692]
+position = Vector2(-10, -1)
+rotation = -0.5235988
+texture = ExtResource("2_nphbo")
+offset = Vector2(16, 0)
+region_enabled = true
+region_rect = Rect2(0, 1, 32, 18)
+
+[node name="Biter2" type="Sprite2D" parent="." index="3" unique_id=2003953228]
+position = Vector2(-10, -9.536743e-07)
+rotation = 0.34906584
+texture = ExtResource("2_nphbo")
+offset = Vector2(16, 0)
+region_enabled = true
+region_rect = Rect2(0, 19, 32, 13)
+
+[node name="AnimationExecuter" parent="." index="4" unique_id=1826317159 instance=ExtResource("3_nphbo")]

@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b537oysyafg3d"]
+
+[ext_resource type="Script" uid="uid://b3hs3ej1xw2pt" path="res://scripts/service/AnimationExecuter.cs" id="1_srgvb"]
+
+[node name="AnimationExecuter" type="Node" unique_id=1826317159]
+script = ExtResource("1_srgvb")

@@ -3,25 +3,35 @@ using System;
 
 public partial class Shettle : StaticBody2D
 {
-	[Export] private Timer blink, energyfall;
+	[Export] private AnimationPlayer anum;
 	[Export] private PointLight2D blinkLight, energyfallLight;
+	private Area2D seba;
 	public override void _Ready()
 	{
-		blink.Timeout += BlinkOnTimeout;
-		energyfall.Timeout += EnergyfallOnTimeout;
+		seba = GetNode<Area2D>("Shop");
+		anum.Play("infiniBlink");
+
+		seba.BodyEntered += OnPLayerEntered;
+		seba.BodyExited  += OnPlayerExited;
 	}
 
-	private float currentEnergy = 0, currentTime = 0, maxEnergy = 2, minEnergy = 0.8f;
-	private void EnergyfallOnTimeout()
+	void OnPLayerEntered(Node body)
 	{
-		throw new NotImplementedException();
+		if (body is not Player pl) return;
+		
+		PlayerEntered = true;
 	}
 
-	private void BlinkOnTimeout()
+	void OnPlayerExited(Node body)
 	{
-		throw new NotImplementedException();
+		if (body is not Player pl) return;
+		
+		PlayerEntered = false;
 	}
+	
+	bool PlayerEntered = false;
 
+	
 
 	public override void _Process(double delta)
 	{

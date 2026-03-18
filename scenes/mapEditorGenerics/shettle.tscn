@@ -4,10 +4,74 @@
 [ext_resource type="Script" uid="uid://b7d4q5p1k7rh6" path="res://scripts/map/Shettle.cs" id="1_omoj2"]
 [ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="2_omoj2"]
 
-[node name="Shettle" type="StaticBody2D" unique_id=2105356531 node_paths=PackedStringArray("blink", "energyfall", "blinkLight", "energyfallLight")]
+[sub_resource type="Animation" id="Animation_omoj2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [3.85]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D2:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+
+[sub_resource type="Animation" id="Animation_75wmf"]
+resource_name = "infiniBlink"
+length = 20.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PointLight2D:texture_scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [3.85, 5.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D2:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 5.3333335, 5.4666667, 5.6666665, 5.8333335, 6.0333333, 6.133333, 10.4, 14, 14.133333, 14.233334, 16.933332, 17.4, 17.5, 17.566668),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [1.0, 1.0, 0.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0, 1.0, 1.0, 0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4mfx1"]
+_data = {
+&"RESET": SubResource("Animation_omoj2"),
+&"infiniBlink": SubResource("Animation_75wmf")
+}
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_omoj2"]
+radius = 72.33948
+
+[node name="Shettle" type="StaticBody2D" unique_id=2105356531 node_paths=PackedStringArray("anum", "blinkLight", "energyfallLight")]
 script = ExtResource("1_omoj2")
-blink = NodePath("shortping")
-energyfall = NodePath("energyJump")
+anum = NodePath("AnimationPlayer")
 blinkLight = NodePath("PointLight2D")
 energyfallLight = NodePath("PointLight2D2")
 
@@ -32,8 +96,11 @@ blend_mode = 2
 texture = ExtResource("2_omoj2")
 texture_scale = 0.6
 
-[node name="shortping" type="Timer" parent="." unique_id=1699370384]
-wait_time = 0.3
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=52765230]
+libraries/ = SubResource("AnimationLibrary_4mfx1")
 
-[node name="energyJump" type="Timer" parent="." unique_id=1026729094]
-wait_time = 20.0
+[node name="Shop" type="Area2D" parent="." unique_id=1660084193]
+position = Vector2(-31, 136)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop" unique_id=1591319512]
+shape = SubResource("CircleShape2D_omoj2")

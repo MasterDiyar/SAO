@@ -32,6 +32,6 @@ behavior = NodePath("../aiBehavior")
 nodePath = "../Temich/Node2D/Pike/Area2D"
 
 [node name="aiBehavior" parent="." index="4" unique_id=1348726942 instance=ExtResource("5_aiioi")]
-Escalation = -2
+Escalation = -5
 CanWalk = true
 StopDistance = 50.0

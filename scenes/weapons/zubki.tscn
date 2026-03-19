@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://civyi4iof26c0"]
+
+[ext_resource type="PackedScene" uid="uid://cs2ycv8yucbbb" path="res://scenes/prefab/weapon.tscn" id="1_1gwuq"]
+[ext_resource type="PackedScene" uid="uid://bhl7d6jyv7iss" path="res://scenes/weapons/bullet_factory.tscn" id="2_pd4kv"]
+[ext_resource type="PackedScene" uid="uid://dlkh1wxcp1e2j" path="res://scenes/bullet/Teeth.tscn" id="3_f4cyf"]
+[ext_resource type="PackedScene" uid="uid://b4q1mbarsx700" path="res://scenes/weapons/on_tree_spawner.tscn" id="4_7400r"]
+[ext_resource type="PackedScene" uid="uid://2b8bm3c1ejv6" path="res://scenes/weapons/trigger.tscn" id="5_b4cyc"]
+
+[node name="Zubomet" unique_id=1166905945 node_paths=PackedStringArray("Factory", "Spawner", "Trigger") instance=ExtResource("1_1gwuq")]
+Factory = NodePath("BulletFactory")
+Spawner = NodePath("OnTreeSpawner")
+Trigger = NodePath("Trigger")
+damageType = 3
+
+[node name="BulletFactory" parent="." index="0" unique_id=591390071 instance=ExtResource("2_pd4kv")]
+BulletScene = ExtResource("3_f4cyf")
+Offset = 5.0
+
+[node name="OnTreeSpawner" parent="." index="1" unique_id=1118376102 instance=ExtResource("4_7400r")]
+
+[node name="Trigger" parent="." index="2" unique_id=1013342501 instance=ExtResource("5_b4cyc")]
+AttackSpeed = 2.0

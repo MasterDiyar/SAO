@@ -8,5 +8,6 @@ public partial class PickerResource : Resource
     [Export] public int Level = 0;
     [Export] public int MaxLevel = 0;
     [Export] public bool Repeatable = false;
+    [Export] public string[] Except = [];
 
 }

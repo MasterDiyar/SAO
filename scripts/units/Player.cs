@@ -8,6 +8,7 @@ public partial class Player : Unit
 	[Export] float Amplitude = 10;
 	[Export] public float Friction = 2.0f;
 	[Export] CpuParticles2D left, right;
+	[Export] public string TypeName = "";
 
 	private CardPicker _cardPicker;
 	public Action XpGained;

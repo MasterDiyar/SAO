@@ -10,9 +10,11 @@ public partial class CardPicker : Control
 
     HBoxContainer HBoxContainer;
     RandomNumberGenerator rng = new RandomNumberGenerator();
+    private Player pl;
 
     public override void _Ready()
     {
+        pl = GetParent().GetParent<Player>();
         HBoxContainer = GetNode<HBoxContainer>("MarginContainer/HBoxContainer");
         ExitButton.Pressed += () => Toggle(false);
         rng.Randomize();
@@ -24,19 +26,22 @@ public partial class CardPicker : Control
         if (allCards == null || allCards.Length == 0) return;
 
         List<PickerResource> pool = [];
-
+        bool canAppear = true;
+        
         foreach (var card in allCards)
         {
-            if (card == null || card.pickCard == null) continue;
-
-            bool canAppear = card.Repeatable || card.Level < card.MaxLevel;
+            if (card?.pickCard == null ) continue;
+            foreach (var excepts in card.Except)
+                if (pl.TypeName == excepts) {canAppear = false; break;}
+            
+            canAppear &= card.Repeatable || card.Level < card.MaxLevel;
             if (canAppear)
                 pool.Add(card);
+            canAppear = true;
         }
 
         if (pool.Count == 0) return;
 
-        // Fisher–Yates shuffle
         for (int i = pool.Count - 1; i > 0; i--) {
             int j = rng.RandiRange(0, i);
             (pool[i], pool[j]) = (pool[j], pool[i]);

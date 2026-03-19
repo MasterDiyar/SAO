@@ -21,6 +21,7 @@ project/assembly_name="SAO"
 [file_customization]
 
 folder_colors={
+"res://scenes/prefab/": "red",
 "res://scripts/": "blue"
 }
 

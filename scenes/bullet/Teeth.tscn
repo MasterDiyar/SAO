@@ -168,4 +168,6 @@ offset = Vector2(16, 0)
 region_enabled = true
 region_rect = Rect2(0, 19, 32, 13)
 
-[node name="AnimationExecuter" parent="." index="4" unique_id=1826317159 instance=ExtResource("3_nphbo")]
+[node name="AnimationExecuter" parent="." index="4" unique_id=1826317159 node_paths=PackedStringArray("apl") instance=ExtResource("3_nphbo")]
+apl = NodePath("../AnimationPlayer")
+AnimationName = "warik"

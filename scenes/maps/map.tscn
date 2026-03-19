@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://bm05nft7586sa" path="res://scenes/units/ot_chertl.tscn" id="11_ecttr"]
 [ext_resource type="PackedScene" uid="uid://b7jthwcha63el" path="res://scenes/mapEditorGenerics/shettle.tscn" id="12_bb6qu"]
 [ext_resource type="Shader" uid="uid://c4evbidh3jf6c" path="res://scenes/maps/earth.gdshader" id="12_xvi8g"]
+[ext_resource type="PackedScene" uid="uid://coivfgwk5q6go" path="res://scenes/units/rhino_rana.tscn" id="12_yr6hx"]
 [ext_resource type="PackedScene" uid="uid://d0isfqwno2obf" path="res://scenes/units/Artek.tscn" id="13_xvi8g"]
 [ext_resource type="Texture2D" uid="uid://ch7nnlrt2xx38" path="res://assets/world/zemlya.png" id="13_yr6hx"]
 
@@ -112,6 +113,9 @@ color = Color(0.6636223, 0.57027996, 0.7072902, 1)
 
 [node name="OtChertl" parent="." unique_id=1957874477 instance=ExtResource("11_ecttr")]
 position = Vector2(226.56601, 468.932)
+
+[node name="RhinoRana" parent="OtChertl" unique_id=1861849293 instance=ExtResource("12_yr6hx")]
+position = Vector2(817.0216, -838.0071)
 
 [node name="Shettle" parent="." unique_id=2105356531 instance=ExtResource("12_bb6qu")]
 position = Vector2(395, -200)

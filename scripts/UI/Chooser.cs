@@ -12,12 +12,19 @@ public partial class Chooser : Control
 	
 	void UnitChooserInit()
 	{
-		
+		leftUnitPick.Pressed += LUP;
+	}
+
+	void LUP()
+	{
+		unitIndex--;
 	}
 	
 	public override void _Ready()
 	{
 		PlayButton.Pressed += PlayButtonOnPressed;
+		
+		UnitChooserInit();
 	}
 
 	private void PlayButtonOnPressed()

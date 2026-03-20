@@ -9,7 +9,7 @@
 [sub_resource type="LabelSettings" id="LabelSettings_q3ecl"]
 font_size = 32
 
-[node name="Chooser" type="Control" unique_id=979513833]
+[node name="Chooser" type="Control" unique_id=979513833 node_paths=PackedStringArray("PlayButton", "unitTexture", "leftUnitPick", "rightUnitPick", "unitInfo")]
 texture_filter = 3
 layout_mode = 3
 anchors_preset = 15
@@ -18,6 +18,11 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o320b")
+PlayButton = NodePath("MarginContainer/HBoxContainer/Button")
+unitTexture = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Panel/VBoxContainer/TextureRect")
+leftUnitPick = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Panel/VBoxContainer/HBoxContainer/Button")
+rightUnitPick = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Panel/VBoxContainer/HBoxContainer/Button2")
+unitInfo = NodePath("MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Panel/VBoxContainer/HBoxContainer/Label")
 
 [node name="TextureRect" type="TextureRect" parent="." unique_id=1398889293]
 layout_mode = 1

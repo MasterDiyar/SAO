@@ -1,6 +1,7 @@
 using Godot;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 public partial class CardPicker : Control
 {
@@ -31,13 +32,11 @@ public partial class CardPicker : Control
         foreach (var card in allCards)
         {
             if (card?.pickCard == null ) continue;
-            foreach (var excepts in card.Except)
-                if (pl.TypeName == excepts) {canAppear = false; break;}
+            canAppear = card.Except.All(excepts => pl.TypeName != excepts);
             
             canAppear &= card.Repeatable || card.Level < card.MaxLevel;
             if (canAppear)
                 pool.Add(card);
-            canAppear = true;
         }
 
         if (pool.Count == 0) return;
@@ -68,8 +67,7 @@ public partial class CardPicker : Control
     public void Toggle(bool enable = true)
     {
         Visible = enable;
-        if (!enable)
-        {
+        if (!enable) {
             ClearContainer();
             return;
         }

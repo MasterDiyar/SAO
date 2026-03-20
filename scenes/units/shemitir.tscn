@@ -30,6 +30,7 @@ script = ExtResource("1_i75bt")
 Amplitude = 8.0
 left = NodePath("Mercator/left")
 right = NodePath("Mercator/right")
+TypeName = "mercator"
 Stats = SubResource("Resource_pulrj")
 
 [node name="Mercator" type="Sprite2D" parent="." unique_id=102795226 groups=["foto"]]

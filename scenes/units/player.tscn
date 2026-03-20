@@ -27,6 +27,7 @@ texture_filter = 3
 script = ExtResource("1_15tbu")
 left = NodePath("left")
 right = NodePath("right")
+TypeName = "ufonat"
 Stats = SubResource("Resource_xovxq")
 
 [node name="right" parent="." unique_id=915686076 instance=ExtResource("1_esfxm")]

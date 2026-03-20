@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://dwxotoqegf0vd"]
+
+[ext_resource type="Texture2D" uid="uid://b0b3r4oai5d64" path="res://assets/unitas/Dupont.png" id="1_eg0h4"]
+[ext_resource type="PackedScene" uid="uid://wl8t56fe0k6c" path="res://scenes/particles/fire_hot.tscn" id="1_ufaft"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufaft"]
+radius = 16.0
+height = 54.0
+
+[node name="Duponte" type="CharacterBody2D" unique_id=2069530827 groups=["player"]]
+texture_filter = 3
+
+[node name="fireHot" parent="." unique_id=915686076 instance=ExtResource("1_ufaft")]
+position = Vector2(6, 26)
+rotation = 1.3962634
+
+[node name="fireHot2" parent="." unique_id=266277650 instance=ExtResource("1_ufaft")]
+position = Vector2(-6, 26)
+rotation = 1.7453293
+
+[node name="Body" type="Sprite2D" parent="." unique_id=1260682027]
+texture = ExtResource("1_eg0h4")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="Chert" type="Sprite2D" parent="Body" unique_id=836034122]
+position = Vector2(0, -5)
+texture = ExtResource("1_eg0h4")
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 16)
+
+[node name="leye" type="Sprite2D" parent="Body/Chert" unique_id=67331670]
+position = Vector2(-7, 4)
+texture = ExtResource("1_eg0h4")
+region_enabled = true
+region_rect = Rect2(0, 80, 8, 3)
+
+[node name="reye" type="Sprite2D" parent="Body/Chert" unique_id=1744735454]
+position = Vector2(7, 4)
+texture = ExtResource("1_eg0h4")
+region_enabled = true
+region_rect = Rect2(8, 80, 8, 3)
+
+[node name="Head" type="Sprite2D" parent="Body" unique_id=1286775985]
+position = Vector2(0, -9)
+texture = ExtResource("1_eg0h4")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Ass" type="Sprite2D" parent="Body" unique_id=999619476]
+show_behind_parent = true
+position = Vector2(4.7683716e-07, 16)
+scale = Vector2(0.9375, 1)
+texture = ExtResource("1_eg0h4")
+region_enabled = true
+region_rect = Rect2(0, 96, 32, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1255426877]
+visible = false
+shape = SubResource("CapsuleShape2D_ufaft")

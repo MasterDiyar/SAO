@@ -2,9 +2,13 @@
 
 [ext_resource type="Texture2D" uid="uid://drk8ppug3wokm" path="res://assets/ui/lala.png" id="1_2cjvo"]
 [ext_resource type="Script" uid="uid://cljbl8jhjiwvk" path="res://scripts/UI/Chooser.cs" id="1_o320b"]
-[ext_resource type="Texture2D" uid="uid://dk1ikcj4qamcm" path="res://assets/unitas/Ufonat.png" id="2_cr1gd"]
 [ext_resource type="Texture2D" uid="uid://w7ukt2h16o02" path="res://assets/ui/hex.png" id="3_cr1gd"]
+[ext_resource type="Texture2D" uid="uid://b0b3r4oai5d64" path="res://assets/unitas/Dupont.png" id="3_o320b"]
 [ext_resource type="Texture2D" uid="uid://d2ykd8qveaxi3" path="res://assets/ui/mapa.png" id="5_5b7b7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5b7b7"]
+atlas = ExtResource("3_o320b")
+region = Rect2(112, 8, 64, 72)
 
 [sub_resource type="LabelSettings" id="LabelSettings_q3ecl"]
 font_size = 32
@@ -72,7 +76,7 @@ grow_vertical = 2
 [node name="TextureRect" type="TextureRect" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Panel/VBoxContainer" unique_id=1555712972]
 layout_mode = 2
 size_flags_vertical = 3
-texture = ExtResource("2_cr1gd")
+texture = SubResource("AtlasTexture_5b7b7")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer/Panel/VBoxContainer" unique_id=790306329]
 layout_mode = 2

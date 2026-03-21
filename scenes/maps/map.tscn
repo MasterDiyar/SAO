@@ -5,9 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://c5wjiorthgmaa" path="res://scenes/debug/debug_node.tscn" id="3_ce1uw"]
 [ext_resource type="PackedScene" uid="uid://b8dybuts3lcpm" path="res://scenes/mapEditorGenerics/grass.tscn" id="5_idmyr"]
 [ext_resource type="PackedScene" uid="uid://c36l0w7li2qqb" path="res://scenes/units/no_bash.tscn" id="6_xltkm"]
-[ext_resource type="PackedScene" uid="uid://brxhycisbw0b7" path="res://scenes/units/shemitir.tscn" id="8_aewf8"]
 [ext_resource type="PackedScene" uid="uid://cra0tfrhgbw5w" path="res://scenes/units/oxxxy_miron.tscn" id="8_ttkqu"]
-[ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="10_lwbun"]
 [ext_resource type="PackedScene" uid="uid://bm05nft7586sa" path="res://scenes/units/ot_chertl.tscn" id="11_ecttr"]
 [ext_resource type="PackedScene" uid="uid://b7jthwcha63el" path="res://scenes/mapEditorGenerics/shettle.tscn" id="12_bb6qu"]
 [ext_resource type="Shader" uid="uid://c4evbidh3jf6c" path="res://scenes/maps/earth.gdshader" id="12_xvi8g"]
@@ -95,14 +93,6 @@ position = Vector2(102.7272, 384.9578)
 
 [node name="OxxxyMiron" parent="." unique_id=122788501 instance=ExtResource("8_ttkqu")]
 position = Vector2(429, 115)
-
-[node name="Shemitir" parent="." unique_id=296776465 instance=ExtResource("8_aewf8")]
-y_sort_enabled = true
-
-[node name="PointLight2D" type="PointLight2D" parent="Shemitir" unique_id=110634299]
-energy = 1.44
-blend_mode = 2
-texture = ExtResource("10_lwbun")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=950949877]
 environment = SubResource("Environment_ttkqu")

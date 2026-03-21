@@ -1,0 +1,40 @@
+[gd_scene format=3 uid="uid://p1ox6lteleqr"]
+
+[ext_resource type="Texture2D" uid="uid://b0b3r4oai5d64" path="res://assets/unitas/Dupont.png" id="1_mto3p"]
+
+[node name="DupartSkin" type="Sprite2D" unique_id=2075432113]
+texture = ExtResource("1_mto3p")
+region_enabled = true
+region_rect = Rect2(0, 32, 32, 32)
+
+[node name="Chert" type="Sprite2D" parent="." unique_id=75940915]
+position = Vector2(0, -5)
+texture = ExtResource("1_mto3p")
+region_enabled = true
+region_rect = Rect2(0, 64, 32, 16)
+
+[node name="leye" type="Sprite2D" parent="Chert" unique_id=747261524]
+position = Vector2(-7, 4)
+texture = ExtResource("1_mto3p")
+region_enabled = true
+region_rect = Rect2(0, 80, 8, 3)
+
+[node name="reye" type="Sprite2D" parent="Chert" unique_id=310296976]
+position = Vector2(7, 4)
+texture = ExtResource("1_mto3p")
+region_enabled = true
+region_rect = Rect2(8, 80, 8, 3)
+
+[node name="Head" type="Sprite2D" parent="." unique_id=1270667687]
+position = Vector2(0, -9)
+texture = ExtResource("1_mto3p")
+region_enabled = true
+region_rect = Rect2(0, 0, 32, 32)
+
+[node name="Ass" type="Sprite2D" parent="." unique_id=1902479430]
+show_behind_parent = true
+position = Vector2(4.7683716e-07, 16)
+scale = Vector2(0.9375, 1)
+texture = ExtResource("1_mto3p")
+region_enabled = true
+region_rect = Rect2(0, 96, 32, 24)

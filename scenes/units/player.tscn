@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_rwmet"]
 [ext_resource type="PackedScene" uid="uid://5vnk840ld3aw" path="res://scenes/weapons/sob_chach.tscn" id="6_xovxq"]
 [ext_resource type="PackedScene" uid="uid://bm6axyrtuav5s" path="res://scenes/player/monitor.tscn" id="7_174p4"]
+[ext_resource type="PackedScene" uid="uid://d175emtkrq3e8" path="res://scenes/player/camera_2d.tscn" id="7_ts5o2"]
 
 [sub_resource type="Resource" id="Resource_xovxq"]
 script = ExtResource("2_rwmet")
@@ -48,3 +49,5 @@ texture = ExtResource("1_pkbir")
 
 [node name="Monitor" parent="." unique_id=1822647779 node_paths=PackedStringArray("pl") instance=ExtResource("7_174p4")]
 pl = NodePath("..")
+
+[node name="Camera2D" parent="." unique_id=44282447 instance=ExtResource("7_ts5o2")]

@@ -16,7 +16,8 @@ public partial class UpgradeCard : Panel
 	public override void _Ready()
 	{
 		if (!isItNeeded) return;
-		Numero.GetParent<TextureRect>().Texture = UpgradeTextures[level-1];
+		if (level-1>UpgradeTextures.Length) return; 
+		Numero.GetParent<TextureRect>().Texture = UpgradeTextures[int.Clamp(level ,0,UpgradeTextures.Length-1)];
 	}
 	
 	public override void _GuiInput(InputEvent @event)
@@ -28,33 +29,55 @@ public partial class UpgradeCard : Panel
 
 	protected virtual void ApplyUpgradeToPlayer()
 	{
-		if (GetTree().GetFirstNodeInGroup("player") is Unit player) {
-			int index = level - 1;
-			if (index >= 0 && index < UpgradeResources.Length) {
-				UnitResource upgrade = UpgradeResources[index];
-				if (player.Stats != null && upgrade != null)
-					player.Stats.AddStat(upgrade);
-				
-			}else 
-				GD.PrintErr("Ошибка: Для текущего уровня нет соответствующего UnitResource!");
-		}
-		else
+		if (GetTree().GetFirstNodeInGroup("player") is not Unit player) {
 			GD.PrintErr("Ошибка: Объект игрока с группой 'Player' не найден!");
+			return;
+		}
+		
+		int index = Math.Clamp(level, 0, UpgradeTexts.Length - 1);
+		
+		if (index >= UpgradeResources.Length) {
+			GD.PrintErr("Ошибка: Для текущего уровня нет соответствующего UnitResource!", index);
+			return;
+		}
+		UnitResource upgrade = UpgradeResources[index];	
+		
+		if (upgrade == null) {
+			GD.PrintErr($"Ошибка: Ресурс по индексу {index} равен null!");
+			return;
+		}
+
+		if (player.Stats == null) {
+			GD.PrintErr("Ошибка: У игрока не инициализирован компонент Stats!");
+			return;
+		}
+		player.Stats.AddStat(upgrade);
+		
 	}
 
 	public void UpdateText(int lvl)
 	{
 		level = lvl;
-		if (UpgradeTexts != null) {
-			string[] texts = UpgradeTexts[level - 1].Split(';');
-			if (texts.Length > 1) {
-				Plus.Text = texts[0];
-				Minus.Text = texts[1];
-			}else {
-				if (UpgradeTexts[level - 1] != null)
-					Plus.Text = UpgradeTexts[level - 1];
-			}
+		
+		if (UpgradeTexts == null || UpgradeTexts.Length == 0) {
+			Numero.Update(level);
+			return;
 		}
+		
+		int safeIndex = Math.Clamp(level , 0, UpgradeTexts.Length - 1);
+		string rawText = UpgradeTexts[safeIndex];
+
+		if (string.IsNullOrEmpty(rawText)) {
+			Numero.Update(level);
+			return;
+		}
+		string[] texts = rawText.Split(';');
+
+		if (texts.Length >= 2) {
+			Plus.Text = texts[0];
+			Minus.Text = texts[1];
+		}else Plus.Text = rawText;
+		
 		Numero.Update(level);
 	}
 }

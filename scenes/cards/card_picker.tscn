@@ -32,7 +32,7 @@ metadata/_custom_type_script = "uid://byolx5tig536v"
 script = ExtResource("3_7dw1e")
 pickCard = ExtResource("6_7dw1e")
 MaxLevel = 1
-Except = PackedStringArray("mercator")
+Except = PackedStringArray("mercator", "duponte")
 metadata/_custom_type_script = "uid://byolx5tig536v"
 
 [sub_resource type="Resource" id="Resource_h6ps4"]

@@ -3,6 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://l3na3moaar4f" path="res://scenes/prefab/bullet.tscn" id="1_85b53"]
 [ext_resource type="Texture2D" uid="uid://cxgfq7qqy5l30" path="res://assets/unitas/whure.png" id="2_jl3l6"]
 [ext_resource type="Texture2D" uid="uid://bphnluhlwbfb3" path="res://assets/unitas/crimlight.png" id="3_x66ow"]
+[ext_resource type="PackedScene" uid="uid://b537oysyafg3d" path="res://scenes/debug/animation_executer.tscn" id="4_jl3l6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_a8bpp"]
 radius = 150.0
@@ -22,6 +23,91 @@ point_count = 2
 [sub_resource type="Gradient" id="Gradient_6n5q8"]
 offsets = PackedFloat32Array(0, 0.16363636, 0.4181818, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0.9, 0.84000003, 0, 1, 0.7394091, 0.7394091, 0.7394091, 1, 0.37, 0.37, 0.37, 1)
+
+[sub_resource type="Animation" id="Animation_x66ow"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CPUParticles2D2:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [150.0]
+}
+
+[sub_resource type="Animation" id="Animation_a8bpp"]
+resource_name = "zapsuk"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../CPUParticles2D2:emitting")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../CPUParticles2D:emitting")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../CollisionShape2D:shape:radius")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [150.0, 220.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cmgid"]
+_data = {
+&"RESET": SubResource("Animation_x66ow"),
+&"zapsuk": SubResource("Animation_a8bpp")
+}
 
 [node name="Boom" unique_id=1728971169 instance=ExtResource("1_85b53")]
 Damage = 200.0
@@ -67,3 +153,11 @@ linear_accel_max = 20.0
 scale_amount_max = 2.0
 scale_amount_curve = SubResource("Curve_b47vp")
 color_ramp = SubResource("Gradient_6n5q8")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="3" unique_id=1315214127]
+root_node = NodePath("../AnimationExecuter")
+libraries/ = SubResource("AnimationLibrary_cmgid")
+
+[node name="AnimationExecuter" parent="." index="4" unique_id=1826317159 node_paths=PackedStringArray("apl") instance=ExtResource("4_jl3l6")]
+apl = NodePath("../AnimationPlayer")
+AnimationName = "zapsuk"

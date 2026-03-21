@@ -1,14 +1,38 @@
 [gd_scene format=3 uid="uid://dwxotoqegf0vd"]
 
-[ext_resource type="Texture2D" uid="uid://b0b3r4oai5d64" path="res://assets/unitas/Dupont.png" id="1_eg0h4"]
 [ext_resource type="PackedScene" uid="uid://wl8t56fe0k6c" path="res://scenes/particles/fire_hot.tscn" id="1_ufaft"]
+[ext_resource type="Script" uid="uid://bet7w3f35f3lj" path="res://scripts/units/Player.cs" id="1_vmgbn"]
+[ext_resource type="Script" uid="uid://bx8wg87ba4lo4" path="res://scripts/resources/UnitResource.cs" id="2_7umuk"]
+[ext_resource type="PackedScene" uid="uid://p1ox6lteleqr" path="res://scenes/animations/dupart_skin.tscn" id="2_ufaft"]
+[ext_resource type="PackedScene" uid="uid://bm6axyrtuav5s" path="res://scenes/player/monitor.tscn" id="5_3o1vd"]
+[ext_resource type="PackedScene" uid="uid://d175emtkrq3e8" path="res://scenes/player/camera_2d.tscn" id="6_6bi43"]
+[ext_resource type="PackedScene" uid="uid://48w1d5psikoa" path="res://scenes/weapons/aton.tscn" id="7_o7k8r"]
+
+[sub_resource type="Resource" id="Resource_3o1vd"]
+script = ExtResource("2_7umuk")
+Hp = 400.0
+Strength = 100.0
+Mp = 5.0
+Speed = 100.0
+Armor = 500.0
+Intellegence = 1.0
+KritMultiplier = 5.0
+KritChance = 100.0
+metadata/_custom_type_script = "uid://bx8wg87ba4lo4"
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ufaft"]
 radius = 16.0
-height = 54.0
+height = 50.0
 
-[node name="Duponte" type="CharacterBody2D" unique_id=2069530827 groups=["player"]]
+[node name="Duponte" type="CharacterBody2D" unique_id=2069530827 node_paths=PackedStringArray("left", "right") groups=["player"]]
 texture_filter = 3
+script = ExtResource("1_vmgbn")
+Amplitude = 24.0
+Friction = 6.0
+left = NodePath("fireHot2")
+right = NodePath("fireHot")
+TypeName = "duponte"
+Stats = SubResource("Resource_3o1vd")
 
 [node name="fireHot" parent="." unique_id=915686076 instance=ExtResource("1_ufaft")]
 position = Vector2(6, 26)
@@ -18,43 +42,14 @@ rotation = 1.3962634
 position = Vector2(-6, 26)
 rotation = 1.7453293
 
-[node name="Body" type="Sprite2D" parent="." unique_id=1260682027]
-texture = ExtResource("1_eg0h4")
-region_enabled = true
-region_rect = Rect2(0, 32, 32, 32)
-
-[node name="Chert" type="Sprite2D" parent="Body" unique_id=836034122]
-position = Vector2(0, -5)
-texture = ExtResource("1_eg0h4")
-region_enabled = true
-region_rect = Rect2(0, 64, 32, 16)
-
-[node name="leye" type="Sprite2D" parent="Body/Chert" unique_id=67331670]
-position = Vector2(-7, 4)
-texture = ExtResource("1_eg0h4")
-region_enabled = true
-region_rect = Rect2(0, 80, 8, 3)
-
-[node name="reye" type="Sprite2D" parent="Body/Chert" unique_id=1744735454]
-position = Vector2(7, 4)
-texture = ExtResource("1_eg0h4")
-region_enabled = true
-region_rect = Rect2(8, 80, 8, 3)
-
-[node name="Head" type="Sprite2D" parent="Body" unique_id=1286775985]
-position = Vector2(0, -9)
-texture = ExtResource("1_eg0h4")
-region_enabled = true
-region_rect = Rect2(0, 0, 32, 32)
-
-[node name="Ass" type="Sprite2D" parent="Body" unique_id=999619476]
-show_behind_parent = true
-position = Vector2(4.7683716e-07, 16)
-scale = Vector2(0.9375, 1)
-texture = ExtResource("1_eg0h4")
-region_enabled = true
-region_rect = Rect2(0, 96, 32, 24)
+[node name="DupartSkin" parent="." unique_id=2075432113 instance=ExtResource("2_ufaft")]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1255426877]
-visible = false
 shape = SubResource("CapsuleShape2D_ufaft")
+
+[node name="Monitor" parent="." unique_id=1822647779 node_paths=PackedStringArray("pl") instance=ExtResource("5_3o1vd")]
+pl = NodePath("..")
+
+[node name="Camera2D" parent="." unique_id=44282447 instance=ExtResource("6_6bi43")]
+
+[node name="Aton" parent="." unique_id=1166905945 instance=ExtResource("7_o7k8r")]
